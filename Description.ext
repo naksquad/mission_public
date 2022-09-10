@@ -1,0 +1,223 @@
+//------------------------- On Load
+
+author = NAK Squad;					// Visible when loading mission
+onLoadName = "NAK Squad Invade & Annex";						// Visible when loading mission
+OnLoadMission = "Welcome to <t color='#ab2b2c'>NAK Squad</t> , join us at <t color='#ff9900'>WWW.NAKSQUAD.NET</t> and <t color='#ff9900'>TS3.NAKSQUAD.NET</t>";
+
+loadScreen = __EVAL(selectRandom ["Media\LoadingScreens\Loading072520_1.paa","Media\LoadingScreens\Loading072520_2.paa","Media\LoadingScreens\Loading072520_3.paa","Media\LoadingScreens\Loading072520_4.paa"]);
+overviewPicture = __EVAL(selectRandom ["Media\LoadingScreens\Loading072520_1.paa","Media\LoadingScreens\Loading072520_2.paa","Media\LoadingScreens\Loading072520_3.paa","Media\LoadingScreens\Loading072520_4.paa"]);
+
+onLoadIntro = "";										// Displays a message while the intro is loading.
+onLoadIntroTime = 0;									// Time and date displayed while the intro loads. 1 visible, 0 hidden.
+onLoadMissionTime = 0;									// Time and date displayed while the mission loads. 1 visible, 0 hidden.
+
+class Header
+	{
+		gameType = COOP;								// Unknown, COOP, DM, TDM, CTF, SC, CTI, RPG, Sandbox, Seize, Defend.
+		minPlayers = 1;									// Min # of players the MISSION supports
+		maxPlayers = 82;								// Max # of players the MISSION supports, not server slots. Make sure # is greater than server slots.
+	};
+
+//------------------------- Admin
+
+enableDebugConsole[] = {"76561198325875438", "76561198036205616", "76561198019349455", "76561197989060279"}; //Added T-man for code testing
+allowFunctionsLog = 0; 									// Log functions to .rpt. disabled with 0
+allowFunctionsRecompile = 0;
+onPauseScript = "zq.sqf";
+
+
+//------------------------- Misc
+
+//disableChannels[]={0,1,2,6};
+//disableChannels[] = {{0,false,true},{1,false,true},{2,false,true},{6,true,true}};									// 0 = Global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct, 6 = System. Admin/server/BattlEye can still use Global.
+disabledAI = 1;											// No AI in playable units
+aiKills = 0; 											// disable scorelist for AI players
+enableItemsDropping = 0; 								// disabled with 0
+joinUnassigned = 1;										// 0 = players forced into role on join
+showUAVFeed = 1;										// Enables/Disables the UAV Feed. Zeus-related.
+forceRotorLibSimulation = 0;
+respawnOnStart = 0;
+
+//------------------------- Garbage collector
+
+corpseManagerMode = 1; //Type of removed bodies: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable 
+corpseLimit = 5; //Max number of bodies which can be available at the same time. When exceeded, start deleting immediately. 
+corpseRemovalMinTime = 120; //Minimal time in seconds a body stays in the scene (can't be removed sooner). 
+corpseRemovalMaxTime = 200; //Maximal time in seconds after which a dead body is removed (can't stay longer) 
+
+wreckManagerMode = 1; //Type of removed wrecks: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable 
+wreckLimit = 3; //Max number of wrecks which can be available at the same time. When exceeded, start deleting immediately. 
+wreckRemovalMinTime = 60; //Minimal time in seconds a wreck stays in the scene (can't be removed sooner). 
+wreckRemovalMaxTime = 160; //Maximal time in seconds after which a wreck is removed (can't stay longer)
+
+arsenalRestrictedItems[] = {"Exo_MK1_Backpack","Exo_MK1_Backpack_Multicam_Boosters","Exo_MK1_Backpack_multicam","Exo_MK1_Medium_Engineer_Backpack","Exo_MK1_Medium_Engineer_Backpack_Multicam","Exo_MK1_Medium_Fighter_Backpack","Exo_MK1_Medium_Fighter_Backpack_Multicam","Exo_MK1_Medium_Medic_Backpack","B_Carryall_gepard","B_Carryall_boat","B_BIG_01_backpack_F","B_LegStrapBag_black_tardis_F","B_Carryall_darter","B_Carryall_weapon","B_Carryall_putin","B_Carryall_sochor","B_Carryall_tank","riten_jetpack_bp","gear_FieldPack_BK_01","A_AssaultAtlasarctic_Base","A_AssaultAtlasarctic_Base","A_AssaultAtlaspack_Base","B_AssaultPackPS_Base","A_AssaultKVAB_Base","A_AssaultPackMarine_Base","A_AssaultPackMarineC_Base","A_AssaultSentinelHALOpack_Base","B_KA_Metal_Storm_AI_AAF","B_KA_Metal_Storm_AI_CSAT","B_KA_Metal_Storm_AI_NATO","B_KA_Metal_Storm_AAF","B_KA_Metal_Storm_CSAT","B_KA_Metal_Storm_NATO","gear_usa_Tacticalpack_TN_01","gear_FieldPack_BK_01","gear_backbelt_BK_01","gear_backbelt_BK_02","gear_backbelt_BK_03","gear_backbelt_BK_0,","gear_backbelt_BK_05","gear_assaultpack_bk_01","gear_assaultpack_bk_02","gear_FastPack_BK_01","gear_largesize_BK_01","gear_Carryall_BK_01","gear_Tacticalpack_BK_01","gear_FieldPack_ABU_01","gear_backbelt_ABU_01","gear_backbelt_ABU_02","gear_backbelt_ABU_03","gear_backbelt_ABU_0,","gear_backbelt_ABU_05","gear_assaultpack_ABU_02","gear_assaultpack_ABU_01","gear_FastPack_ABU_01","gear_largesize_ABU_01","gear_Carryall_ABU_01","gear_Tacticalpack_ABU_01","gear_FieldPack_ACU_01","gear_backbelt_ACU_01","gear_backbelt_ACU_02","gear_backbelt_ACU_03","gear_backbelt_ACU_0,","gear_backbelt_ACU_05","gear_assaultpack_ACU_01","gear_assaultpack_ACU_02","gear_FastPack_ACU_01","gear_largesize_ACU_01","gear_Carryall_ACU_01","gear_Tacticalpack_ACU_01","gear_FieldPack_AOR1_01","gear_backbelt_AOR1_01","gear_backbelt_AOR1_02","gear_backbelt_AOR1_03","gear_backbelt_AOR1_0,","gear_backbelt_AOR1_05","gear_assaultpack_AOR1_01","gear_assaultpack_AOR1_02","gear_FastPack_AOR1_01","gear_largesize_AOR1_01","gear_Carryall_AOR1_01","gear_Tacticalpack_AOR1_01","gear_FieldPack_AOR2_01","gear_backbelt_AOR2_01","gear_backbelt_AOR2_02","gear_backbelt_AOR2_03","gear_backbelt_AOR2_0,","gear_backbelt_AOR2_05","gear_assaultpack_AOR2_01","gear_assaultpack_AOR2_02","gear_FastPack_AOR2_01","gear_largesize_AOR2_01","gear_Carryall_AOR2_01","gear_Tacticalpack_AOR2_01","gear_usa_FieldPack_BK_01","gear_usa_backbelt_BK_01","gear_usa_backbelt_BK_02","gear_usa_backbelt_BK_03","gear_usa_backbelt_BK_0,","gear_usa_backbelt_BK_05","gear_usa_assaultpack_bk_01","gear_usa_assaultpack_bk_02","gear_usa_FastPack_BK_01","gear_usa_largesize_BK_01","gear_usa_Carryall_BK_01","gear_usa_Tacticalpack_BK_01","gear_usa_FieldPack_CB_01","gear_usa_backbelt_CB_01","gear_usa_backbelt_CB_02","gear_usa_backbelt_CB_03","gear_usa_backbelt_CB_0","gear_usa_backbelt_CB_05","gear_usa_assaultpack_CB_01","gear_usa_assaultpack_CB_02","gear_usa_FastPack_CB_01","gear_usa_largesize_CB_01","gear_usa_Carryall_CB_01","gear_usa_Tacticalpack_CB_01","gear_FieldPack_MARPATD_01","gear_backbelt_MARPATD_01","gear_backbelt_MARPATD_0,","gear_backbelt_MARPATD_02","gear_backbelt_MARPATD_03","gear_backbelt_MARPATD_05","gear_assaultpack_MARPATD_01","gear_assaultpack_MARPATD_02","gear_FastPack_MARPATD_01","gear_largesize_MARPATD_01","gear_Carryall_MARPATD_01","gear_Tacticalpack_MARPATD_01","gear_FieldPack_MARPATS_01","gear_backbelt_MARPATS_01","gear_backbelt_MARPATS_02","gear_backbelt_MARPATS_03","gear_backbelt_MARPATS_0,","gear_backbelt_MARPATS_05","gear_assaultpack_MARPATS_01","gear_assaultpack_MARPATS_02","gear_FastPack_MARPATS_01","gear_largesize_MARPATS_01","gear_Carryall_MARPATS_01","gear_Tacticalpack_MARPATS_01","gear_FieldPack_MARPATW_01","gear_backbelt_MARPATW_01","gear_backbelt_MARPATW_02","gear_backbelt_MARPATW_03","gear_backbelt_MARPATW_0,","gear_backbelt_MARPATW_05","gear_assaultpack_MARPATW_01","gear_assaultpack_MARPATW_02","gear_FastPack_MARPATW_01","gear_largesize_MARPATW_01","gear_Carryall_MARPATW_01","gear_Tacticalpack_MARPATW_01","gear_FieldPack_NWU_01","gear_backbelt_NWU_01","gear_backbelt_NWU_02","gear_backbelt_NWU_03","gear_backbelt_NWU_0,","gear_backbelt_NWU_05","gear_assaultpack_NWU_01","gear_assaultpack_NWU_02","gear_FastPack_NWU_01","gear_largesize_NWU_01","gear_Carryall_NWU_01","gear_Tacticalpack_NWU_01","gear_FieldPack_OCP_01","gear_backbelt_OCP_01","gear_backbelt_OCP_02","gear_backbelt_OCP_03","gear_backbelt_OCP_0,","gear_backbelt_OCP_05","gear_assaultpack_OCP_01","gear_assaultpack_OCP_02","gear_FastPack_OCP_01","gear_largesize_OCP_01","gear_Carryall_OCP_01","gear_Tacticalpack_OCP_01","gear_usa_FieldPack_OD_01","gear_usa_backbelt_OD_01","gear_usa_backbelt_OD_02","gear_usa_backbelt_OD_03","gear_usa_backbelt_OD_0,","gear_usa_backbelt_OD_05","gear_usa_assaultpack_OD_01","gear_usa_assaultpack_OD_02","gear_usa_FastPack_OD_01","gear_usa_largesize_OD_01","gear_usa_Carryall_OD_01","gear_usa_Tacticalpack_OD_01","gear_usa_FieldPack_SG_01","gear_usa_backbelt_SG_01","gear_usa_backbelt_SG_02","gear_usa_backbelt_SG_03","gear_usa_backbelt_SG_0,","gear_usa_backbelt_SG_05","gear_usa_assaultpack_SG_01","gear_usa_assaultpack_sg_02","gear_usa_FastPack_SG_01","gear_usa_largesize_SG_01","gear_usa_Carryall_SG_01","gear_usa_Tacticalpack_SG_01","gear_usa_FieldPack_TN_01","gear_usa_backbelt_TN_01","gear_usa_backbelt_TN_02","gear_usa_backbelt_TN_03","gear_usa_backbelt_TN_0","gear_usa_backbelt_TN_05","gear_usa_assaultpack_TN_01","gear_usa_assaultpack_TN_02","gear_usa_FastPack_TN_01","gear_usa_largesize_TN_01","gear_usa_Carryall_TN_01","gear_usa_Tacticalpack_TN_01","B_Patrol_Respawn_bag_F","Respawn_TentDome_F","B_Respawn_TentDome_F","Respawn_TentA_F","B_Respawn_TentA_F","Respawn_Sleeping_bag_F","Respawn_Sleeping_bag_blue_F","B_Respawn_Sleeping_bag_blue_F","Respawn_Sleeping_bag_brown_F","B_Respawn_Sleeping_bag_brown_F","B_Respawn_Sleeping_bag_F","B_KA_Metal_Storm_AI_AAF","B_KA_Metal_Storm_AI_CSAT","B_KA_Metal_Storm_AI_NATO","B_KA_Metal_Storm_AAF","B_KA_Metal_Storm_CSAT","B_KA_Metal_Storm_NATO","Invisi_bp","SA_Backpack_Tiger","B_rhsusf_B_BACKPACK","CUP_B_Predator_MTP","CUP_B_Predator_Radio_MTP","O_UAV_06_backpack_grn_F","O_UAV_06_medical_backpack_grn_F","O_UAV_01_backpack_grn_F","ej_ASIPB","ej_ASIPC","ej_ASIPBW","ej_ASIP","CUP_B_UAVTerminal_Black","I_UAV_01_backpack_F","I_UAV_06_backpack_F","I_UAV_06_medical_backpack_F","I_UGV_02_Demining_backpack_F","I_UGV_02_Science_backpack_F","O_UAV_01_backpack_F","O_UAV_06_backpack_F","O_UAV_06_medical_backpack_F","O_UGV_02_Demining_backpack_F","O_UGV_02_Science_backpack_F","B_UGV_02_Science_backpack_F","I_E_UGV_02_Science_backpack_F","I_E_UAV_01_backpack_F","I_E_UAV_06_backpack_F","I_E_UAV_06_medical_backpack_F","I_E_UGV_02_Demining_backpack_F","B_ION_UavTerminal_F","10Rnd_Railgun_Mag","30Rnd_test_mag_Tracer","KU98K_MAG","KU98K_MAG_T","20Rnd_127x32_Mag","KU98K_NSK_MAG","ER7_RFW_APAO","ER7_RFW_DES","BPX_UTS15_HE","rhsusf_5Rnd_doomsday_Buck","rhsusf_8Rnd_doomsday_Buck","128Rnd_762_mag","LAGO_KU5K_MAG_T","KA_VC1_Flamethrower_Mag","KA_Suitcase_Nuke_Mag","Excalibur_CUT","KA_20Rnd_127x99_M33","KA_20Rnd_127x99_M1022LR","KA_20Rnd_127x99_Mk211AP","KA_20Rnd_127x99_M33","KA_20Rnd_127x99_M1022LR","hlc_500rnd_762x51_Belt","hlc_500rnd_762x51_Cinematic","20Rnd_AA12_Pellets","KA_20Rnd_127x99_M33","500Rnd_762x51_Belt","KA_PDR_20rnd_Mk318_SOST_mag","KA_CS5_10rnd_Mk316_SPR_mag","8Rnd_Mossberg_590_Pellets","KA_NTW20_3rnd_MK106_HEI","ATA_6Rnd_HE_25mm","KA_6Rnd_300win_Mag","KA_SCAR_L_30rnd_Mk318_SOST_mag","KA_SCAR_L_60rnd_Mk318_SOST_mag","KA_SCAR_H_20rnd_Mk319_SOST_mag","KA_DSR50_3Rnd_x2_M33_FMJ_Mag","KA_SRAW_AT_Mag","KA_axe_blade","KA_machete_blade","KA_knife_blade","KA_dagger_blade","KICKASS_2Rnd_Sawed_Off_Shotgun_Pellets","Katana_swing","KKiv_Mag_HEDP","KKiv_Mag_APFSDS","LAGO_TWP_magazine","LAGO_KU3K_magazine","AP_MAG","HE_MAG","LAGO_SCannon_MAG","LAGO_CP_MAG","hlc_10Rnd_BLASTER_B_DL44","Barret25HE_mag","BarretHE_mag","3rnd_Anzio_20x102mm","AS50HE_mag","AA12_20rnd_HEMag","10Rnd_B_XM25_HE","mx_120rnd_50_box","CUP_20Rnd_B_AA12_HE","MCRS_14rnd_HEMag","MasterkeyHE_4rnd_Mag","CUP_12Rnd_B_Saiga12_HE","CUP_5Rnd_B_Saiga12_HE","CUP_8Rnd_12Gauge_HE","CUP_6Rnd_12Gauge_HE","CUP_1Rnd_12Gauge_HE","rhsusf_5Rnd_FRAG","rhsusf_5Rnd_HE","rhsusf_8Rnd_HE","rhsusf_8Rnd_FRAG","U_C_Soldier_VR","U_B_Soldier_VR","U_O_Soldier_VR","U_I_Soldier_VR"};
+
+//------------------------- Includes
+#include "R3F_LOG\desc_include.h"
+#include "functions\CHVD\dialog.hpp"					// CHVD View Distance script
+#include "defines\defines.hpp"
+#include "defines\dialog.hpp"
+#include "defines\lesEcrans001.hpp"
+#include "defines\lesEcrans007.hpp"
+#include "defines\lesEcrans008.hpp"
+#include "defines\lesEcrans009.hpp"
+#include "defines\lesEcrans010.hpp"
+#include "defines\lesEcrans011.hpp"
+#include "defines\lesEcrans012.hpp"
+#include "defines\lesEcrans1.hpp"
+#include "defines\lesEcrans2.hpp"
+#include "defines\lesEcrans3.hpp"
+#include "defines\lesEcrans4.hpp"
+#include "defines\lesEcrans5.hpp"
+#include "defines\lesEcrans6.hpp"
+#include "defines\lesEcrans7.hpp"
+#include "defines\lesEcrans8.hpp"
+#include "defines\lesEcrans10.hpp"
+#include "defines\lesEcrans11.hpp"
+#include "outlw_magRepack\MagRepack_config.hpp"
+//Added VileAce for AI recruiting
+#include "recruit_units\dialog\common.hpp"
+#include "recruit_units\dialog\recruitment.hpp"
+
+class unitList
+	{
+		#include "defines\units.hpp"
+	};
+
+class CfgFunctions
+	{
+		#include "functions\cfgfunctions.hpp"
+	};
+
+class CfgNotifications
+	{
+		#include "defines\Notifications.hpp"
+	};
+
+class CfgTaskTypes
+	{
+		#include "defines\Tasks.hpp"
+	};
+class RscTitles {
+ #include "defines\namesleft.hpp"
+};
+
+	class CfgSounds 
+	{
+		sounds[] = {}; 
+		class lavraisirene
+		{
+			name = "lavraisirenes";
+			sound[] = {"Media\labelsirenes.ogg", db+15, 1};
+			titles[] = {1,""};
+		};
+
+		class empkillers
+		{
+			name = "empkillerss";
+			sound[] = {"Media\empkiller.ogg", db+15, 1};
+			titles[] = {1,""};
+		};
+
+		class rewheals
+		{
+			name = "rewhealss";
+			sound[] = {"Media\rewheal.ogg", db+15, 1};
+			titles[] = {1,""};
+		};
+		class sectorsecl
+		{
+			name = "sectorsecls";
+			sound[] = {"Media\tvmedia\sector.ogg", db+15, 1};
+			titles[] = {1,""};
+		};
+		class sectorscan
+		{
+			name = "sectorscans";
+			sound[] = {"Media\tvmedia\scan.ogg", db+15, 1};
+			titles[] = {1,""};
+		};
+		class scanterminatedq
+		{
+			name = "scanterminateds";
+			sound[] = {"Media\tvmedia\scan_terminated.ogg", db+15, 1};
+			titles[] = {1,""};
+		};
+		class airdroppros
+		{
+			name = "airdroppross";
+			sound[] = {"Media\tvmedia\airdrop.ogg", db+15, 1};
+			titles[] = {1,""};
+		};
+			class destinations
+		{
+			name = "destinations";
+			sound[] = {"Media\tvmedia\destination.ogg", db+15, 1};
+			titles[] = {1,""};
+		};
+
+		class button_click 
+		{
+			name = "";
+			sound[] = {"Media\tvmedia\click.ogg", 0.8, 1};
+			titles[] = {};
+		};
+		class button_close 
+		{
+			name = "";
+			sound[] = {"Media\tvmedia\close.ogg", 0.8, 1};
+			titles[] = {};
+		};
+		class button_wrong 
+		{
+			name = "";
+			sound[] = {"Media\tvmedia\wrong.ogg", 0.8, 1};
+			titles[] = {};
+		};
+		class wire_cut 
+		{
+			name = "";
+			sound[] = {"Media\tvmedia\cutting.ogg", 1, 1};
+			titles[] = {};
+		};
+	};
+
+	class Params
+	{	
+	#include "\a3\Functions_F\Params\paramRevive.hpp"
+	};
+class CfgDebriefing
+{
+	class End6
+	{
+		title = "Unapproved Mod";
+		subtitle = "One or more loaded mods are not allowed";
+		description = "You have one or more loaded mods that are not allowed on this server. For the list of approved mods, visit our website <a href='https://www.naksquad.net/mods'>https://www.naksquad.net/mods</a>  If you have a question, need assistance, or feel you received this message in error you may speak to an Admin on our TeamSpeak server. ts3.naksquad.net.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.0,0.0,0.0,1};
+	};
+	class End5
+	{
+		title = "DISAGREE";
+		subtitle = "You chose not to agree to our server rules.";
+		description = "If you would like to review the rules in more detail before accepting, visit our website or follow the link to <a href='https://www.naksquad.net/nak-server-rules/'>NAK Server Rules</a>.  If you have question or need assistance, you may speak to an Admin on our TeamSpeak server. ts3.naksquad.net";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.0,0.0,0.0,1};
+	};
+	class End2
+	{
+		title = "DbFail";
+		subtitle = "Database loading failed";
+		description = "Database loading failed, Please exit the server and join again";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.0,0.0,0.0,1};
+	};
+};
+
+class Extended_PreInit_EventHandlers {
+	VCM_CBASettings = call compile preprocessFileLineNumbers "Vcom\Functions\VCM_CBASettings.sqf";
+};
+

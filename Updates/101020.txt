@@ -1,0 +1,54 @@
+Files to delete 
+\Defines\lesEcrans9.hpp
+\Functions\rose\fn_VA8.sqf
+Media\images\1ModIcon.paa
+Media\images\1FAQ.paa
+Media\images\1Feedback.paa
+Media\images\1PlayerSettings.paa
+Media\images\1PlayerStats.paa
+Media\images\1ServerRules.paa
+Media\images\1stores.paa
+Media\images\1TeamSpeak.paa
+Media\images\1Website.paa
+Media\images\PlayerSettings.paa
+Media\images\secscan.paa
+Media\images\sectorsc.paa
+Media\images\SectorScan.paa
+Media\images\Tac.jpg
+Media\images\Donate8.paa
+Media\images\awflag2_flat.jpg
+Media\images\awflag3_flat.jpg
+Media\images\awflag4_flat.jpg
+Media\images\awflag5_flat.jpg
+Media\lesregles.png
+Media\lesregles.paa
+Media\akon0011.paa
+Media\akon1.paa
+Media\akon2.paa
+\Defines\lesEcrans002.hpp
+\Functions\masterloderB\fn_nakWAP.sqf
+\Functions\masterloderB\fn_nakWAPAM.sqf
+\Functions\masterloderB\fn_nakWAPL.sqf
+\Functions\masterloderB\fn_nakWAPLAM.sqf
+Media\tvimage\statinaa.paa
+Media\tvimage\Bmk32.paa
+Media\tvimage\mk30hmgR.paa
+
+Rules Updated in all locations to reflect current rules
+Add Recruit AI (Fixed AI recruits able to spawn on Carrier)
+Add Mortar Static weapon drop
+Formatted NAK Pad screens to be consistent size and colors for icon and text
+Fixed time on NAK Pad to show leading and trailing zeros
+Minor Bug Fixes
+Added Backpacks to supply drops (Requested by Wave)
+Changed Vehicle not available signs to say "The Vehicle Will Respawn At %1:%2 Game Time" instead of "Zulu Time"
+Added check on Personalized Ammo (any inventory), so player can not load restricted magazines. (Similar to on arsenal exit check)
+Implemented Server With Arsenal Blacklist - Left the on arsenal exit check as a backup until we are sure that the blacklist works as expected.  The is a slight delay to opening the arsenal for each player the first time.
+Updated magazine blacklist to prevent HE rounds.
+Updated Trigger around infantry and airport.  Some vehicles were getting through
+
+Please do not misuse or abuse the AI recruit feature.  If this feature is misused we may have to remove it.
+
+For all rule enforcement your AI is you and you are your AI.
+You must be a pilot or NAK Elite for your AI to pilot a vehicle.
+You must have visual contact of your AI at all times, unless they are rejoining you.

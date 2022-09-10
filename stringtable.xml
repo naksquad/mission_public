@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ATM Airdrop">
+	<Package name="ATMDrop">
+		<Key ID="STR_ATM_Alt">
+			<English>Altitude:</English>
+			<French>Altitude:</French>
+		</Key>
+		<Key ID="STR_ATM_Keys">
+			<English>Select Key:</English>
+			<French>Choisir Une touche:</French>
+		</Key>
+		<Key ID="STR_ATM_Main">
+			<English>Choose your Altitude and Cut Key</English>
+			<French>Choisir votre altitude et une touche</French>
+		<Key>
+		<Key ID="STR_ATM_hover">
+			<English>Select your altitude and your key</English>
+			<French>Selectionner votre altitude et votre touche</French>
+		</Key>
+		<Key ID="STR_ATM_hinton">
+			<English>Click On The Map To Select Para-Drop Destination</English>
+			<French>Cliquez sur la carte pour sélectionner une destination de parachutage</French>
+		</Key>
+		<Key ID="STR_ATM_hintjump">
+			<English>PRESS KEY TO CUT-AWAY ROPES</English>
+			<French>Appuyer sur votre touche pour couper les suspentes</French>
+		</Key>
+		<Key ID="STR_ATM_hintload">
+			<English>loading loadout ...</English>
+			<French>Chargement de votre équipement ...</French>
+		</Key>
+		<Key ID="STR_ATM_Close">
+			<English>Close</English>
+			<French>Fermer</French>
+		</Key>
+	</Package>
+</Project>
+
+<Project name="naksquad ts">
+	<Package name="naksquadLts">
+		<Key ID="STR_AA_BATERY">
+			<English>Destroy Anti-Air Battery</English>
+			<German>Zerstöre die Luftabwehrbatterie</German>
+			<Italian>Distruggi la batteria anti-aria</Italian>
+			<Spanish>Destruye la batería antiaérea</Spanish>
+			<Czech>Zničte protiletadlovou baterii</Czech>
+			<Russian>Уничтожьте противовоздушную батарею</Russian>
+			<Polish>Zniszcz baterię przeciwpowietrzną</Polish>
+			<French>Détruire la batterie anti-aérienne</French>
+			<Hungarian>Pusztítsd el az anti-air elemet</Hungarian>
+			<Portuguese>Destrua a bateria anti-ar</Portuguese>
+		</Key>
+		<Key ID="STR_AA_DESC">
+			<English>OPFOR is setting up an anti-air battery to hit you guys damned hard! We've located their positions with thermal imaging scans and have marked it on your map. This is a priority target!</English>
+			<German>OPFOR-Streitkräfte richten eine Anti-Luft-Batterie ein, um Sie zu schlagen, verdammt hart! Wir haben ihre Positionen mit Wärmebildscans ermittelt und auf Ihrer Karte markiert. Dies ist ein vorrangiges Ziel, Jungs!</German>
+			<Italian>Le forze OPFOR stanno preparando una batteria anti-aria per colpire voi ragazzi dannatamente duri! Abbiamo preso le loro posizioni con le scansioni di immagini termiche e l'abbiamo segnato sulla mappa, Questo è un obiettivo prioritario, ragazzi!</Italian>
+			<Spanish>Las fuerzas de OPFOR están montando una batería antiaérea para golpearlos a ustedes malditamente fuerte. Hemos recogido sus posiciones con escáneres de imágenes térmicas y lo hemos marcado en su mapa. ¡Este es un objetivo prioritario, muchachos!</Spanish>
+			<Czech>Síly OPFOR vytvářejí protiletadlovou baterii, která vás zasáhne zatraceně! Zachytili jsme jejich pozice pomocí tepelných snímacích skenů a označili to na mapě. Toto je prioritní cíl, chlapci!</Czech>
+			<Russian>Силы ОППОР создают противотанковую батарею, чтобы поразить вас, ребята, проклятые! Мы подняли свои позиции с помощью тепловизионных сканирований и отметили это на вашей карте. Это приоритетная цель, мальчики!</Russian>
+			<Polish>Siły OPFOR zakładają baterię przeciwlotniczą, aby cię mocno potępić! Wybraliśmy ich pozycje za pomocą skanów termowizyjnych i zaznaczyliśmy je na mapie, To jest priorytetowy cel, chłopcy!</Polish>
+			<French>Les forces de l'OPFOR mettent en place une batterie anti-aérienne pour vous frapper fort! Nous avons relevé leurs positions avec les scanners d’imagerie thermique et les avons marqués sur votre carte. C’est une cible prioritaire, les gars!</French>
+			<Hungarian>Az OPFOR erői egy anti-air akkumulátort állítanak fel, hogy keményen elkapják a srácokat! Felvettük álláspontjukat hőképes vizsgálatsal, és megjelöltük a térképen. Ez kiemelt célpont, fiúk!</Hungarian>
+			<Portuguese>As forças da OPFOR estão montando uma bateria anti-ar para acertar vocês muito bem! Nós escolhemos suas posições com imagens térmicas e as marcamos no seu mapa. Esse é um alvo prioritário, rapazes!</Portuguese>
+		</Key>
+			<Key ID="STR_AO_TAK">
+			<English>Take %1</English>
+			<German>Nehmen %1</German>
+			<Italian>Prendere %1</Italian>
+			<Spanish>Toma %1</Spanish>
+			<Czech>Vzít %1</Czech>
+			<Russian>принимать %1</Russian>
+			<Polish>Brać %1</Polish>
+			<French>Prendre %1</French>
+			<Hungarian>Vesz %1</Hungarian>
+			<Portuguese>Leva %1</Portuguese>
+		</Key>
+			<Key ID="STR_DEFUSE_B">
+			<English>Defuse the Bomb</English>
+			<German>Die Bombe entschärfen</German>
+			<Italian>Disinnesca la bomba</Italian>
+			<Spanish>Desactivar la bomba</Spanish>
+			<Czech>Zničte bombu</Czech>
+			<Russian>Разблокировать Бомба</Russian>
+			<Polish>Rozbroić bombę</Polish>
+			<French>Désamorcer la bombe</French>
+			<Hungarian>Megszüntetni a bomba</Hungarian>
+			<Portuguese>Desativar a bomba</Portuguese>
+		</Key>
+			<Key ID="STR_FIND_COD">
+			<English>Find the code and defuse the bomb before it explodes... Be careful</English>
+			<German>Finde den Code und entschärfe die Bombe, bevor sie explodiert. Sei vorsichtig</German>
+			<Italian>Trova il codice e disinnescare la bomba prima che esploda. Fai attenzione</Italian>
+			<Spanish>Encuentra el código y desactiva la bomba antes de que explote. Ten cuidado</Spanish>
+			<Czech>Najděte kód a zlikvidujte bombu před tím, než exploduje .. Buďte opatrní</Czech>
+			<Russian>Найдите код и обезвредите бомбу перед взрывом. Будьте осторожны</Russian>
+			<Polish>Znajdź kod i rozbroń bombę, zanim eksploduje. Uważaj</Polish>
+			<French>Trouvez le code et désamorcez la bombe avant qu'elle n'explose. Faites attention</French>
+			<Hungarian>Keresse meg a kódot, és feloldja a bombát, mielőtt felrobbanna .. Légy óvatos</Hungarian>
+			<Portuguese>Encontre o código e desarme a bomba antes que ela exploda.</Portuguese>
+		</Key>
+			<Key ID="STR_INTEROG_S">
+			<English>Interrogate the Scientist</English>
+			<German>Befragen Sie den Wissenschaftler</German>
+			<Italian>Interrogare lo scienziato</Italian>
+			<Spanish>Interrogar al científico</Spanish>
+			<Czech>Interrogovat vědce</Czech>
+			<Russian>Опросите Ученого</Russian>
+			<Polish>Przesłuchaj naukowca</Polish>
+			<French>Interroger le scientifique</French>
+			<Hungarian>Kérdezze meg a tudós</Hungarian>
+			<Portuguese>Interrogar o cientista</Portuguese>
+		</Key>
+			<Key ID="STR_INTEROGA_DES">
+			<English>Interrogate the scientist and retrieve the bomb code.</English>
+			<German>Befragen Sie den Wissenschaftler und rufen Sie den Bombencode ab</German>
+			<Italian>Interrogare lo scienziato e recuperare il codice della bomba</Italian>
+			<Spanish>Interrogar al científico y recuperar el código de la bomba.</Spanish>
+			<Czech>Interrogovat Vědce a získat kód bomby</Czech>
+			<Russian>Опросите Ученого и получите код бомбы</Russian>
+			<Polish>Przesłuchaj Naukowca i pobierz kod bomby</Polish>
+			<French>Interrogez le scientifique et récupérez le code de la bombe</French>
+			<Hungarian>Kérdezze meg a tudós és keresse meg a bomba kódot</Hungarian>
+			<Portuguese>Interrogar o cientista e recuperar o código da bomba</Portuguese>
+		</Key>
+			<Key ID="STR_DEST_AT_SEEK">
+			<English>Seek and Destroy Artillery</English>
+			<German>Suche und zerstöre artillerie</German>
+			<Italian>Cerca e distruggi l'artiglieria</Italian>
+			<Spanish>Busca y destruye artillería</Spanish>
+			<Czech>Vyhledat a zničit dělostřelectvo</Czech>
+			<Russian>Ищите и уничтожайте артиллерию</Russian>
+			<Polish>Szukaj i zniszcz artylerię</Polish>
+			<French>Chercher et détruire l'artillerie</French>
+			<Hungarian>Keresni és megsemmisíteni a tüzérséget</Hungarian>
+			<Portuguese>Procure e destrua artilharia</Portuguese>
+		</Key>
+			<Key ID="STR_DEST_AT_DES_SEEK">
+			<English>Seek and destroy artillery. Get over there and destroy that thing. Be careful, our reconnaissance have identified heavy resistance.</English>
+			<German>Suche und zerstöre Artillerie. Komm rüber und zerstöre das Ding. Seien Sie vorsichtig, unsere Mitarbeiter haben gesagt, dass sie viel mehr Rüstung als Standard hat und eine Vielzahl mächtiger Waffen mit sich bringt.</German>
+			<Italian>Cerca e distruggi l'artiglieria. Vai là e distruggi quella cosa. Fai attenzione, i nostri agenti hanno detto che ha più armature che standard e possiede una vasta gamma di potenti armi.</Italian>
+			<Spanish>Busca y destruye la artillería. Ve allá y destruye esa cosa. Ten cuidado, nuestros agentes han dicho que tiene mucha más armadura que el estándar y que lleva una amplia gama de armas poderosas.</Spanish>
+			<Czech>Vyhledat a zničit dělostřelectvo. Pojďte tam a zničte tu věc. Buďte opatrní, naši agenti říkají, že mají mnohem více brnění než standard a nesou široké spektrum silných zbraní.</Czech>
+			<Russian>Ищите и уничтожайте артиллерию. Убирайся туда и уничтожь это. Будьте осторожны, наши оперативники сказали, что у них гораздо больше брони, чем у стандартного, и содержит широкий спектр мощного оружия.</Russian>
+			<Polish>Szukaj i zniszcz artylerię. Idź tam i zniszcz to. Bądź ostrożny, nasi operatorzy powiedzieli, że ma o wiele więcej zbroi niż standardowych i posiada szeroki wachlarz potężnych broni.</Polish>
+			<French>Cherchez et détruisez l'artillerie. Allez là-bas et détruisez cette chose. Faites attention, nos agents ont dit que leur armure était bien supérieure à celle standard et qu'ils portaient un large éventail d'armes puissantes.</French>
+			<Hungarian>Keresni és megsemmisíteni a tüzérséget. Menj oda és pusztítsd el azt a dolgot. Légy óvatos, sok fegyverünk van, mint a standard, és számos fegyverrel rendelkezünk.</Hungarian>
+			<Portuguese>Procure e destrua a artilharia. Vá até lá e destrua essa coisa. Tenha cuidado, temos muita armadura do que o padrão e carregamos uma grande variedade de armas poderosas.</Portuguese>
+		</Key>
+		<Key ID="STR_SEC-CHOP">
+			<English>Secure Chopper</English>
+			<German>Sichern Sie den Chopper</German>
+			<Italian>Proteggi il Chopper</Italian>
+			<Spanish>Asegure el Chopper</Spanish>
+			<Czech>Zabezpečte vrtulník</Czech>
+			<Russian>Защитите измельчитель</Russian>
+			<Polish>Zabezpiecz Chopper</Polish>
+			<French>Sécuriser le hachoir</French>
+			<Hungarian>Biztosítsa a Chopper-t</Hungarian>
+			<Portuguese>Prenda o Chopper</Portuguese>
+		</Key>
+			<Key ID="STR_SEC-CHOP_DES">
+			<English>OPFOR have been provided with a new prototype attack chopper and they're keeping it in a hangar somewhere nearby. We have marked the suspected location on your map. Head to the hangar; locate the nearby cargo building; get the data and destroy the helicopter.</English>
+			<German>OPFOR-Truppen wurden mit einem neuen Prototyp-Angriffs-Chopper versehen, der sich irgendwo auf der Insel in einem Hangar befindet. Wir haben den vermuteten Ort auf Ihrer Karte markiert. Geht in den Hangar, holt die Daten und zerstört den Hubschrauber!</German>
+			<Italian>Le forze dell'OPFOR sono state dotate di un nuovo prototipo di chopper d'attacco e lo stanno tenendo in un hangar da qualche parte sull'isola. Abbiamo contrassegnato la posizione sospetta sulla mappa; dirigiti verso l'hangar, prendi i dati e distruggi l'elicottero!</Italian>
+			<Spanish>Las fuerzas de OPFOR han recibido un nuevo prototipo de helicóptero de ataque y lo mantienen en un hangar en algún lugar de la isla. Hemos marcado la ubicación sospechosa en tu mapa; ¡Dirígete al hangar, consigue los datos y destruye el helicóptero!</Spanish>
+			<Czech>Síly OPFOR byly vybaveny novým prototypem útoku a drží je v hangáru někde na ostrově. Označili jsme podezření na mapě; jděte do hangáru, získáte data a zničte vrtulník!</Czech>
+			<Russian>Силам ОПК был предоставлен новый прототип ударного вертолета, и они хранят его в ангаре где-то на острове. Мы отметили подозрительное местоположение на вашей карте; отправляйтесь в ангар, получите данные и уничтожьте вертолет!</Russian>
+			<Polish>Siły OPFOR zostały wyposażone w nowy prototypowy helikopter ataku i trzymają go w hangarze gdzieś na wyspie. Oznacziliśmy podejrzane miejsce na mapie; udaj się do hangaru, zdobądź dane i zniszcz helikopter!</Polish>
+			<French>Les forces de l'OPFOR ont reçu un nouveau prototype d'hélicoptère d'attaque et le gardent dans un hangar quelque part sur l'île. Nous avons indiqué l'emplacement présumé sur votre carte. dirigez-vous vers le hangar, récupérez les données et détruisez l'hélicoptère!</French>
+			<Hungarian>Az OPFOR erői egy új prototípus támadó helikopterrel rendelkeznek, és egy hangáron tartják valahol a szigeten. Megjelöltük a gyanús helyet a térképen; menj a hangárhoz, szerezd meg az adatokat és elpusztítsd a helikoptert!</Hungarian>
+			<Portuguese>As forças da OPFOR receberam um novo protótipo de helicóptero de ataque e estão mantendo-o em um hangar em algum lugar da ilha. Marcamos a localização suspeita em seu mapa; Vá para o hangar, pegue os dados e destrua o helicóptero!</Portuguese>
+		</Key>
+			<Key ID="STR_DEST_AT">
+			<English>Destroy Artillery</English>
+			<German>Artillerie zerstören</German>
+			<Italian>Distruggi l'artiglieria</Italian>
+			<Spanish>Destruir la artilleria</Spanish>
+			<Czech>Zničte dělostřelectvo</Czech>
+			<Russian>Уничтожить артиллерию</Russian>
+			<Polish>Zniszcz artylerię</Polish>
+			<French>Détruire l'artillerie</French>
+			<Hungarian>Megsemmisítsd a tüzérséget</Hungarian>
+			<Portuguese>Destrua a artilharia</Portuguese>
+		</Key>
+			<Key ID="STR_DEST_AT_DES">
+			<English>OPFOR are setting up an artillery battery to hit you guys damned hard! We've picked up their positions with thermal imaging scans and have marked it on your map. This is a priority target! They're just setting up now; we estimate they'll be firing in five minutes.</English>
+			<German>OPFOR-Streitkräfte richten eine Artillerie-Batterie ein, um Sie zu schlagen, verdammt hart! Wir haben ihre Positionen mit Wärmebildscans ermittelt und auf Ihrer Karte markiert. Dies ist ein vorrangiges Ziel, Jungs! Sie richten sich gerade ein; Sie werden in etwa fünf Minuten feuern!</German>
+			<Italian>Le forze OPFOR stanno preparando una batteria di artiglieria per colpire voi ragazzi dannatamente duri! Abbiamo preso le loro posizioni con le scansioni di immagini termiche e l'abbiamo segnato sulla mappa. Questo è un obiettivo prioritario, ragazzi! Si stanno appena installando ora; spareranno tra circa cinque minuti!</Italian>
+			<Spanish>¡Las fuerzas de OPFOR están configurando una batería de artillería para golpearlos a ustedes malditamente fuerte! Hemos recogido sus posiciones con escáneres de imágenes térmicas y lo hemos marcado en su mapa. ¡Este es un objetivo prioritario, muchachos! Se están instalando ahora; ¡Estarán disparando en unos cinco minutos!</Spanish>
+			<Czech>Síly OPFOR vytvářejí dělostřeleckou baterii, která vás zatraceně zatáhne! Zachytili jsme své pozice pomocí termálních snímků a označili je na mapě. To je prioritní cíl, chlapci! Právě se zřídí; budou střílet za pět minut!</Czech>
+			<Russian>Силы ОППОР создают артиллерийскую батарею, чтобы поразить вас, ребята, проклятые! Мы подняли свои позиции с помощью тепловизионных сканирований и отметили это на вашей карте. Это приоритетная цель, ребята! Они просто настраиваются сейчас; они будут стрелять примерно через пять минут!</Russian>
+			<Polish>Siły OPFOR ustawiają baterię artylerii, aby cię mocno potępić! Wybraliśmy ich pozycje za pomocą skanów termowizyjnych i zaznaczyliśmy to na twojej mapie. To jest priorytetowy cel, chłopcy! Właśnie się teraz konfigurują; będą strzelać za jakieś pięć minut!</Polish>
+			<French>Les forces de l'OPFOR préparent une batterie d'artillerie pour vous frapper fort! Nous avons relevé leurs positions avec les images thermiques et les avons marquées sur votre carte. C’est une cible prioritaire, les gars! Ils sont en train de s'installer maintenant; ils vont tirer dans environ cinq minutes!</French>
+			<Hungarian>Az OPFOR erői egy tüzérségi akkumulátort állítanak fel, hogy keményen elkapják a srácokat! Felvettük a pozícióikat hőképes vizsgálatsal, és megjelöltük a térképen. Ez kiemelt célpont, fiúk! Csak most állítanak fel; öt perc alatt lőni fognak!</Hungarian>
+			<Portuguese>As forças da OPFOR estão montando uma bateria de artilharia para acertar vocês muito bem! Nós escolhemos suas posições com imagens térmicas e marcamos em seu mapa. Esse é um alvo prioritário, garotos! Eles estão apenas se preparando agora; eles estarão atirando em cerca de cinco minutos!</Portuguese>
+		</Key>
+			<Key ID="STR_DESA_EMP">
+			<English>Deactivate EMP Device</English>
+			<German>EMP-Gerät deaktivieren</German>
+			<Italian>Disattiva dispositivo EMP</Italian>
+			<Spanish>Desactivar dispositivo EMP</Spanish>
+			<Czech>Deaktivujte zařízení EMP</Czech>
+			<Russian>Деактивировать устройство EMP</Russian>
+			<Polish>Dezaktywuj urządzenie EMP</Polish>
+			<French>Désactiver le périphérique EMP</French>
+			<Hungarian>Kapcsolja ki az EMP eszközt</Hungarian>
+			<Portuguese>Desativar dispositivo EMP</Portuguese>
+		</Key>
+			<Key ID="STR_DESA_EMP_DES">
+			<English>Deactivate the EMP Device before detonation.  The EMP device will disable all engines that are on at the time of detonation.</English>
+			<German>Deaktivieren Sie das EMP-Gerät vor der Detonation</German>
+			<Italian>Disattiva il dispositivo EMP prima della detonazione</Italian>
+			<Spanish>Desactivar el dispositivo EMP antes de la detonación</Spanish>
+			<Czech>Deaktivujte zařízení EMP před detonací</Czech>
+			<Russian>Деактивировать устройство EMP перед детонацией</Russian>
+			<Polish>Dezaktywuj urządzenie EMP przed detonacją</Polish>
+			<French>Désactiver le dispositif EMP avant la détonation</French>
+			<Hungarian>Kapcsolja ki az EMP készüléket a detonáció előtt</Hungarian>
+			<Portuguese>Desativar o dispositivo EMP antes da detonação</Portuguese>
+		</Key>
+		<Key ID="STR_DEST_RT">
+			<English>Destroy Radio Tower</English>
+			<German>Zerstöre den Funkturm</German>
+			<Italian>Distruggi la torre radio</Italian>
+			<Spanish>Destruir la torre de radio</Spanish>
+			<Czech>Zničte rozhlasovou věž</Czech>
+			<Russian>Уничтожьте радиобачку</Russian>
+			<Polish>Zniszcz wieżę radiową</Polish>
+			<French>Détruire la tour radio</French>
+			<Hungarian>Elpusztítani a rádió tornyot</Hungarian>
+			<Portuguese>Destrua a torre de rádio</Portuguese>
+		</Key>
+		<Key ID="STR_WATER_CP">
+			<English>Retrieve Cash From The B-25 Wreck</English>
+			<German>Holen Sie sich Bargeld vom B-25 Wrack</German>
+			<Italian>Recupera i contanti dal relitto B-25</Italian>
+			<Spanish>Recuperar efectivo de la ruina B-25</Spanish>
+			<Czech>Získejte peníze z vraku B-25</Czech>
+			<Russian>Получить наличные с крушения B-25</Russian>
+			<Polish>Odzyskaj gotówkę z wraku B-25</Polish>
+			<French>Récupérer l'argent qui est l'épave du B-25</French>
+			<Hungarian>Visszaszerezze a készpénzt a B-25 roncsból</Hungarian>
+			<Portuguese>Recuperar dinheiro do naufrágio B-25</Portuguese>
+		</Key>
+		<Key ID="STR_WATER_TW">
+			<English>Clear the Water HQ</English>
+			<German>Klares Wasser HQ</German>
+			<Italian>HQ acqua limpida</Italian>
+			<Spanish>HQ de agua clara</Spanish>
+			<Czech>Jasné vodní HQ</Czech>
+			<Russian>Чистая вода HQ</Russian>
+			<Polish>Centrala z czystą wodą</Polish>
+			<French>HQ sur l'eau</French>
+			<Hungarian>Tiszta A víz HQ</Hungarian>
+			<Portuguese>Limpar o QG da água</Portuguese>
+		</Key>
+		<Key ID="STR_DEST_RT_DES">
+			<English>Take down that radio tower to stop the enemy from calling in CAS.</English>
+			<German>Besiege den Funkturm, um den Feind davon abzuhalten, CAS zu rufen.</German>
+			<Italian>Abbatti quella torre radio per impedire al nemico di chiamare CAS.</Italian>
+			<Spanish>Derriba esa torre de radio para evitar que el enemigo llame a CAS.</Spanish>
+			<Czech>Vezměte si rozhlasovou věž, abyste nepřátelku zastavili v CAS.</Czech>
+			<Russian>Снимите эту радиовышку, чтобы остановить врага от CAS.</Russian>
+			<Polish>Zdejmij tę wieżę radiową, aby powstrzymać wroga przed wywołaniem w CAS.</Polish>
+			<French>Arrêtez cette tour radio pour empêcher l'ennemi d'appeler CAS.</French>
+			<Hungarian>Vegye le azt a rádiós tornyot, hogy megállítsa az ellenséget a CAS-ban.</Hungarian>
+			<Portuguese>Derrube essa torre de rádio para impedir que o inimigo chame o CAS.</Portuguese>
+		</Key>
+		<Key ID="STR_FIN_DIA">
+			<English>Find the Diagram</English>
+			<German>Finden Sie das Diagramm</German>
+			<Italian>Trova il diagramma</Italian>
+			<Spanish>Encontrar el diagrama</Spanish>
+			<Czech>Najděte schéma</Czech>
+			<Russian>Найти диаграмму</Russian>
+			<Polish>Znajdź diagram</Polish>
+			<French>Trouver le diagramme</French>
+			<Hungarian>Keresse meg a diagramot</Hungarian>
+			<Portuguese>Encontre o diagrama</Portuguese>
+		</Key>
+		<Key ID="STR_FIN_DIA_DES">
+			<English>Find the Diagram to disarm the bomb.</English>
+			<German>Finden Sie das Diagramm, um die Bombe zu entwaffnen.</German>
+			<Italian>Trova il diagramma per disarmare la bomba.</Italian>
+			<Spanish>Encuentra el diagrama para desarmar la bomba.</Spanish>
+			<Czech>Najděte schéma pro odzbrojení bomby.</Czech>
+			<Russian>Найдите Диаграмму, чтобы разоружить бомбу.</Russian>
+			<Polish>Znajdź diagram, aby rozbroić bombę.</Polish>
+			<French>Trouvez le diagramme pour désarmer la bombe.</French>
+			<Hungarian>Keresse meg a diagramot, hogy hatástalanítsa a bombát.</Hungarian>
+			<Portuguese>Encontre o diagrama para desarmar a bomba.</Portuguese>
+		</Key>
+		<Key ID="STR_SCANERON">
+			<English>Sector Scan online - Check your map!</English>
+			<German>Finden Sie das Diagramm, um die Bombe zu entwaffnen.</German>
+			<Italian>Trova il diagramma per disarmare la bomba.</Italian>
+			<Spanish>Encuentra el diagrama para desarmar la bomba.</Spanish>
+			<Czech>Najděte schéma pro odzbrojení bomby.</Czech>
+			<Russian>Найдите Диаграмму, чтобы разоружить бомбу.</Russian>
+			<Polish>Znajdź diagram, aby rozbroić bombę.</Polish>
+			<French>Trouvez le diagramme pour désarmer la bombe.</French>
+			<Hungarian>Keresse meg a diagramot, hogy hatástalanítsa a bombát.</Hungarian>
+			<Portuguese>Encontre o diagrama para desarmar a bomba.</Portuguese>
+		</Key>
+		<Key ID="STR_SCANEROFF">
+			<English>Scan Terminated</English>
+			<German>Finden Sie das Diagramm, um die Bombe zu entwaffnen.</German>
+			<Italian>Trova il diagramma per disarmare la bomba.</Italian>
+			<Spanish>Encuentra el diagrama para desarmar la bomba.</Spanish>
+			<Czech>Najděte schéma pro odzbrojení bomby.</Czech>
+			<Russian>Найдите Диаграмму, чтобы разоружить бомбу.</Russian>
+			<Polish>Znajdź diagram, aby rozbroić bombę.</Polish>
+			<French>Trouvez le diagramme pour désarmer la bombe.</French>
+			<Hungarian>Keresse meg a diagramot, hogy hatástalanítsa a bombát.</Hungarian>
+			<Portuguese>Encontre o diagrama para desarmar a bomba.</Portuguese>
+		</Key>
+		<Key ID="STR_PARAMETICDIE">
+			<English>Medic Down</English>
+			<German>Finden Sie das Diagramm, um die Bombe zu entwaffnen.</German>
+			<Italian>Trova il diagramma per disarmare la bomba.</Italian>
+			<Spanish>Encuentra el diagrama para desarmar la bomba.</Spanish>
+			<Czech>Najděte schéma pro odzbrojení bomby.</Czech>
+			<Russian>Найдите Диаграмму, чтобы разоружить бомбу.</Russian>
+			<Polish>Znajdź diagram, aby rozbroić bombę.</Polish>
+			<French>Trouvez le diagramme pour désarmer la bombe.</French>
+			<Hungarian>Keresse meg a diagramot, hogy hatástalanítsa a bombát.</Hungarian>
+			<Portuguese>Encontre o diagrama para desarmar a bomba.</Portuguese>
+		</Key>
+		<Key ID="STR_SEC_SATA">
+			<English>Secure Weather Data</English>
+			<German>Sichern Sie den DATA</German>
+			<Italian>Proteggi il DATA</Italian>
+			<Spanish>Asegure el DATA</Spanish>
+			<Czech>Zabezpečte DATA</Czech>
+			<Russian>Защитите DATA</Russian>
+			<Polish>Zabezpiecz DATA</Polish>
+			<French>Sécuriser les DATA</French>
+			<Hungarian>Biztosítsa a DATA</Hungarian>
+			<Portuguese>Prenda o DATA</Portuguese>
+		</Key>
+		<Key ID="STR_PARUAV">
+			<English>Click on the map to spawn defensive asset.</English>
+		</Key>
+	</Package>
+</Project>
+
+<Project name="Domination">
+<Package name="Domination">
+<Container name="Mission">
+	<Key ID="STR_DOM_MISSIONSTRING_0">
+		<English>Welcome to NAK Squad!</English>
+		<German>Willkommen bei NAK Squad!</German>
+		<Italian>Benvenuti a NAK Squad!</Italian>
+		<Spanish>Bienvenido a NAK Squad</Spanish>
+		<Czech>Vítejte na NAK Squad!</Czech>
+		<Russian>Добро пожаловать в NAK Squad!</Russian>
+		<Polish>Witamy NAK Squad!</Polish>
+		<French>Bienvenue a NAK Squad!</French>
+		<Hungarian>Üdvözöljük a NAK Squad!</Hungarian>
+		<Portuguese>Bem-vindo a NAK Squad!</Portuguese>
+	</Key>
+	<Key ID="STR_DOM_MISSIONSTRING_1">
+		<English>Have a Nice Time!</English>
+		<German>Viel Spaß!</German>
+		<Italian>Divertiti!</Italian>
+		<Spanish>Que se Divierta</Spanish>
+		<Czech>Užij si To</Czech>
+		<Russian>Приятно провести время!</Russian>
+		<Polish>Baw się Dobrze!</Polish>
+		<French>Passez un Bon Moment!</French>
+		<Hungarian>Érezd Jól Magad!</Hungarian>
+		<Portuguese>Tem Um Tempo Bom!</Portuguese>
+	</Key>
+	<Key ID="STR_DOM_MISSIONSTRING_2">
+		<English>Welcome</English>
+		<German>Willkommen</German>
+		<Italian>Benvenuti</Italian>
+		<Spanish>Bienvenido</Spanish>
+		<Czech>Vítejte</Czech>
+		<Russian>Добро</Russian>
+		<Polish>Witamy</Polish>
+		<French>Bienvenue</French>
+		<Hungarian>Üdvözöljük</Hungarian>
+		<Portuguese>Bem-vindo</Portuguese>
+	</Key>
+	<Key ID="STR_DOM_MISSIONSTRING_3">
+		<English>Please donate at www.naksquad.net to help keep the server alive and running.</English>
+		<German>Bitte spenden Sie auf www.naksquad.net, um den Server am Leben zu erhalten</German>
+		<Italian>Si prega di donare www.naksquad.net per aiutare a mantenere il server Alive</Italian>
+		<Spanish>Por favor, donate en www.naksquad.net para ayudar a mantener el servidor vivo</Spanish>
+		<Czech>Prosím Donate na www.naksquad.net, které pomohou udržet Server živý</Czech>
+		<Russian>Пожалуйста, пожертвуйте на www.naksquad.net, чтобы помочь сохранить жизнь на сервере</Russian>
+		<Polish>Proszę Wpłać na www.naksquad.net aby pomóc utrzymać serwer Alive</Polish>
+		<French>Veuillez faire un don à www.naksquad.net pour aider à conserver le serveur</French>
+		<Hungarian>Kérjük adományoz www.naksquad.net, hogy segítsen megőrizni a Server Alive</Hungarian>
+		<Portuguese>Faça uma doação em www.naksquad.net para ajudar a manter o servidor vivo</Portuguese>
+	</Key>
+</Key>
+</Container>
+</Package>
+</Project>

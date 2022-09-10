@@ -1,0 +1,1 @@
+missionNamespace setVariable ["foxy2", 1, true];

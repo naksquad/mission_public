@@ -1,0 +1,26 @@
+Added Game Master Modules for admins MAJ or Above
+Added the following to Game Master Module Init
+	this addEventHandler ["CuratorObjectRegistered", {_this call Zeus_fnc_clientEventCuratorObjectRegistered}];
+	this setVariable ['showNotification',FALSE,FALSE];
+	this setVariable ['birdType','',FALSE];
+	[this, [-1, -2, 0]] call bis_fnc_setcuratorvisionmodes;
+//
+
+Zeus_fnc_clientEventCuratorObjectRegistered 
+	adds a key eventhandler for Shift F# to add all objects to Zeus
+	removes Curator ping event
+	add all objects to Zeus
+	
+	Removes addons from admins ranked major only
+		No lightning
+		No Environment
+		And a few more
+
+Changes AI map description to show group owners name - VileAce's [AI]
+Added Scripts\underwater.sqf to init.sqf to delete Bobcat when driven off the carrier
+Added a variable to \Functions\rose\fn_lecrew.sqf so that it can be hidden with VileHUD for screenshots
+Added addEventHandler inventoryOpen to lock backpacks
+Added hints to Arsenals to remind players to take MAP, GPS, and Radio
+Added Funds Added and Colldown Removed to Admin menu
+Added TP to Me - Test script to Admin menu - Small bug needs to be resolved,  but in general it is working
+
