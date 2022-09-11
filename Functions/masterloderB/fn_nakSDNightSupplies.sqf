@@ -1,5 +1,10 @@
 #include "..\..\DefinePrice.hpp"
 
+private _FIRSTAIDCRATE = FIRSTAIDCRATE;
+
+if ((missionNameSpace getVariable "isNakElite")) then {
+	_FIRSTAIDCRATE = FIRSTAIDCRATEELT;
+};
 
 _lock1 = missionNamespace getVariable "lock1";
 if (_lock1 == 1) exitWith {
@@ -12,7 +17,7 @@ if (isNil "_lecallers") then
 	missionNamespace setVariable ["themasterrankin", 0]; 
 	_lecallers = 0;
 };
-if (_lecallers >= FIRSTAIDCRATE) then
+if (_lecallers >= _FIRSTAIDCRATE) then
 	{
 	if (_lock1 == 0) then {
 		missionNamespace setVariable ["lock1", 1]; 
@@ -25,7 +30,7 @@ if (_lecallers >= FIRSTAIDCRATE) then
 		playSound "AddItemOK";
 		closeDialog 0;
 
-			_leresult = _lecallers - FIRSTAIDCRATE;
+			_leresult = _lecallers - _FIRSTAIDCRATE;
 		_therownerid = clientOwner;
 		missionNamespace setVariable ["themasterrankin", _leresult, _therownerid];
 

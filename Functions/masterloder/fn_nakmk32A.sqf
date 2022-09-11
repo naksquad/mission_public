@@ -1,23 +1,26 @@
 #include "..\..\DefinePrice.hpp"
+
+private _STATICMK20A = STATICMK20A;
+
+if ((missionNameSpace getVariable "isNakElite")) then {
+	_STATICMK20A = STATICMK20AELT;
+};
+
 _lock1 = missionNamespace getVariable "lock1";
 if (_lock1 == 1) exitWith {
 	playSound "AddItemFailed";
 	hint "Static Drop System is not Available, Please Wait For The System To Cool Down";
 };
 _lecallers = missionNamespace getVariable "themasterrankin";
-if (isNil "_lecallers") then
-{
-	missionNamespace setVariable ["themasterrankin", 0]; 
+if (isNil "_lecallers") then {
+	missionNamespace setVariable ["themasterrankin", 0];
 	_lecallers = 0;
 };
 
-if (_lecallers >= STATICMK20A) then
-{
-
+if (_lecallers >= _STATICMK20A) then {
 	if (_lock1 == 0) then {
 		_roadrunner = missionNamespace getVariable "roadrunner";
-		if (_roadrunner == 1) then 
-		{	
+		if (_roadrunner == 1) then {
 			_mastragraba = missionNamespace getVariable "mastragraba";
 			deleteVehicle _mastragraba;
 		};
@@ -25,26 +28,24 @@ if (_lecallers >= STATICMK20A) then
 		playSound "AddItemOK";
 		closeDialog 0;
 
-			_leresult = _lecallers - STATICMK20A;
+		_leresult = _lecallers - _STATICMK20A;
 		_therownerid = clientOwner;
 		missionNamespace setVariable ["themasterrankin", _leresult, _therownerid];
-		
-		playSound "airdroppros"; sleep 1; playSound3D ["A3\Data_F_Warlords\sfx\flyby.wss", objNull, FALSE, (position player) vectorAdd [0, 0, 100]]; 
-		[toUpper localize "STR_A3_WL_airdrop_underway"] spawn BIS_fnc_WLSmoothText;  
-		sleep 0.01; 
-		_pos = getpos player;
-		_leboxtosend =  createVehicle ["B_GMG_01_A_F", [8419.31,25116.1,-3.05176e-005], [], 0, 'NONE'];
+
+		playSound "airdroppros";
+		sleep 1; playSound3D ["A3\Data_F_Warlords\sfx\flyby.wss", objNull, false, (position player) vectorAdd [0, 0, 100]];
+		[toUpper localize "STR_A3_WL_airdrop_underway"] spawn BIS_fnc_WLSmoothText;
+		sleep 0.01;
+		_pos = getPos player;
+		_leboxtosend = createVehicle ["B_GMG_01_A_F", [8419.31, 25116.1, -3.05176e-005], [], 0, 'NONE'];
 		_leboxtosend allowDamage false;
-		missionNamespace setVariable ["mastragraba", _leboxtosend]; 
-		missionNamespace setVariable ["roadrunner", 1]; 
-		[_pos,_leboxtosend] call NAK_fnc_vbnetDropB;
+		missionNamespace setVariable ["mastragraba", _leboxtosend];
+		missionNamespace setVariable ["roadrunner", 1];
+		[_pos, _leboxtosend] call NAK_fnc_vbnetDropB;
 		sleep COOLDOWNSYST;
 		missionNamespace setVariable ["lock1", 0];
-	};					
-
-}
-else
-{
+	};
+} else {
 	playSound "AddItemFailed";
 	hint "Insufficient Funds";
 };

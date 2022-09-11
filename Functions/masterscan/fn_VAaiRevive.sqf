@@ -1,4 +1,11 @@
 #include "..\..\DefinePrice.hpp"
+
+private _AIREVIVEVAL = AIREVIVEVAL;
+
+if ((missionNameSpace getVariable "isNakElite")) then {
+	_AIREVIVEVAL = AIREVIVEVALELT;
+};
+
 if (vehicle player != player) exitWith {hint "Revive is Not Available While Inside a Vehicle"};
 _lock1 = missionNamespace getVariable "lock1";
 if (_lock1 == 1) exitWith {
@@ -11,14 +18,14 @@ if (isNil "_lecallers") then
 	missionNamespace setVariable ["themasterrankin", 0]; 
 	_lecallers = 0;
 };
-if (_lecallers >= AIREVIVEVAL) then
+if (_lecallers >= _AIREVIVEVAL) then
 	{
 	if (_lock1 == 0) then {
 		missionNamespace setVariable ["lock1", 1];
 		playSound "AddItemOK";
 		closeDialog 0; 
 
-			_leresult = _lecallers - AIREVIVEVAL;
+			_leresult = _lecallers - _AIREVIVEVAL;
 		_therownerid = clientOwner;
 		missionNamespace setVariable ["themasterrankin", _leresult, _therownerid];
 		

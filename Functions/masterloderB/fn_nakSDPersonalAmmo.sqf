@@ -1,4 +1,11 @@
 #include "..\..\DefinePrice.hpp"
+
+private _PERSONALAMMOCRATE = PERSONALAMMOCRATE;
+
+if ((missionNameSpace getVariable "isNakElite")) then {
+	_PERSONALAMMOCRATE = PERSONALAMMOCRATEELT;
+};
+
 _lock1 = missionNamespace getVariable "lock1";
 if (_lock1 == 1) exitWith {
 	playSound "AddItemFailed";
@@ -11,7 +18,7 @@ if (isNil "_lecallers") then
 	missionNamespace setVariable ["themasterrankin", 0]; 
 	_lecallers = 0;
 };
-if (_lecallers >= PERSONALAMMOCRATE) then
+if (_lecallers >= _PERSONALAMMOCRATE) then
 	{
 
 	if (_lock1 == 0) then {
@@ -25,7 +32,7 @@ if (_lecallers >= PERSONALAMMOCRATE) then
 		playSound "AddItemOK";
 		closeDialog 0;
 
-			_leresult = _lecallers - PERSONALAMMOCRATE;
+			_leresult = _lecallers - _PERSONALAMMOCRATE;
 		_therownerid = clientOwner;
 		missionNamespace setVariable ["themasterrankin", _leresult, _therownerid];
 		

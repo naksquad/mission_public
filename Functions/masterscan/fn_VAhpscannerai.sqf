@@ -7,7 +7,14 @@
 //touch the goround playSound "assemble_target"
 //[toUpper localize "STR_A3_WL_popup_airdrop_selection"] spawn BIS_fnc_WLSmoothText; select air drop zone
 //[toUpper localize "STR_A3_WL_refund"] spawn BIS_fnc_WLSmoothText; 
+
 #include "..\..\DefinePrice.hpp"
+
+private _SECTORSCAN = SECTORSCAN;
+
+if ((missionNameSpace getVariable "isNakElite")) then {
+	_SECTORSCAN = SECTORSCANELT;
+};
 
 if (vehicle player != player) exitWith {hint "Sector Scan is Not Available While Inside a Vehicle"};
 _lock1 = missionNamespace getVariable "lock1";
@@ -22,13 +29,13 @@ if (isNil "_lecallers") then
 	missionNamespace setVariable ["themasterrankin", 0]; 
 	_lecallers = 0;
 };
-if (_lecallers >= SECTORSCAN) then
+if (_lecallers >= _SECTORSCAN) then
 	{
 	if (_lock1 == 0) then {
 		missionNamespace setVariable ["lock1", 1];
 		closeDialog 0;
 
-			_leresult = _lecallers - SECTORSCAN;
+			_leresult = _lecallers - _SECTORSCAN;
 		_therownerid = clientOwner;
 		missionNamespace setVariable ["themasterrankin", _leresult, _therownerid];
 		 
