@@ -22,7 +22,7 @@ _chooseyourdestiny = 302300;
 //store display, passed from onLoad
 _display = _this # 0;
 
-
+[] call AVI_fnc_clearCtrlEvent;
 
 //combo 1
 _claws = "O_Plane_Fighter_02_F" getCompatiblePylonMagazines 1;
@@ -307,3 +307,24 @@ _index = lbAdd [1000002, _x];
 
 (_display displayCtrl 1000001) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName2"];
 (_display displayCtrl 1000002) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName2"];
+
+
+missionNamespace setVariable ["listboxCtrlEhLit", [
+	(_display displayCtrl _combo1),
+	(_display displayCtrl _combo2),
+	(_display displayCtrl _combo3),
+	(_display displayCtrl _combo4),
+	(_display displayCtrl _combo5),
+	(_display displayCtrl _combo6),
+	(_display displayCtrl _combo7),
+	(_display displayCtrl _combo8),
+	(_display displayCtrl _combo9),
+	(_display displayCtrl _combo10),
+	(_display displayCtrl _combo11),
+	(_display displayCtrl _combo12),
+	(_display displayCtrl _combo13),
+	(_display displayCtrl _combo14),
+	(_display displayCtrl _chooseyourdestiny),
+	(_display displayCtrl 1000001),
+	(_display displayCtrl 1000002)
+]];

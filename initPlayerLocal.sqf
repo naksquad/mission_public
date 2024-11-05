@@ -1,32 +1,38 @@
 // AOFL
+if (!isServer && !hasInterface) exitWith {};
+if (isServer) exitWith {};
+
 #include "unitDefines.hpp"
-missionNamespace setVariable ["breakout", 0];
+missionNamespace setVariable ["breakout1", 0];
 
-["Media\NAK_Squad_Intro_Video.ogv"] spawn BIS_fnc_playVideo;
+// ["Media\NAK_Squad_Intro_Video.ogv"] spawn BIS_fnc_playVideo;
 
-missionNamespace setVariable ["lock1", 0];
-missionNamespace setVariable ["roadrunner", 0];
-missionNamespace setVariable ["mastragraba", 0];
-missionNamespace setVariable ["lejoueur", player];
 missionNamespace setVariable ["Dandegreous", 0];
-missionNamespace setVariable ["lesorelle", 1];
-missionNamespace setVariable ["villeaceDBblock", 0];
-missionNamespace setVariable ["getinpos", 0];
-missionNamespace setVariable ["getinplock", 0];
-missionNamespace setVariable ["theskinner", 0];
-missionNamespace setVariable ["thecmopskin", 0];
-missionNamespace setVariable ["theskcpveh", 0];
 missionNamespace setVariable ["atrapelacoleur", 0];
+missionNamespace setVariable ["cancelVehRepair", false];
+missionNamespace setVariable ["dberror", 0];
+missionNamespace setVariable ["getinplock", 0];
+missionNamespace setVariable ["getinpos", 0];
 missionNamespace setVariable ["lacouleur1", 0];
 missionNamespace setVariable ["lacouleur2", 0];
 missionNamespace setVariable ["lacouleur3", 0];
 missionNamespace setVariable ["lacouleur4", 1];
-missionNamespace setVariable ["dberror", 0];
-missionNamespace setVariable ["loaderror1", 0];
-uidd = getPlayerUID player;
 missionNamespace setVariable ["ledepacement", 0];
+missionNamespace setVariable ["lejoueur", player];
 missionNamespace setVariable ["lesnondesjouer", 0];
+missionNamespace setVariable ["lesorelle", 1];
+missionNamespace setVariable ["loaderror1", 0];
+missionNamespace setVariable ["lock1", 0];
+missionNamespace setVariable ["mastragraba", 0];
+missionNamespace setVariable ["repairVehEH", 0];
+missionNamespace setVariable ["roadrunner", 0];
+missionNamespace setVariable ["thecmopskin", 0];
+missionNamespace setVariable ["theskcpveh", 0];
+missionNamespace setVariable ["theskinner", 0];
+missionNamespace setVariable ["villeaceDBblock", 0];
+missionNamespace setVariable ["listboxCtrlEhLit", []];
 
+uidd = getPlayerUID player;
 
 waitUntil {
 	!isNull player
@@ -67,6 +73,22 @@ missionNamespace setVariable ["pilotGunnervt2", _pilotGunnervt2];
 [] execVM "fn_villagers.sqf";
 
 if !(isNil {
+	profileNamespace getVariable "loadTIParameterStartLocal"
+}) then {
+	missionNamespace setVariable ["setTIParameterStart", (profileNamespace getVariable "loadTIParameterStartLocal")];
+} else {
+	missionNamespace setVariable ["setTIParameterStart", 0.1];
+};
+
+if !(isNil {
+	profileNamespace getVariable "loadTIParameterWidthLocal"
+}) then {
+	missionNamespace setVariable ["setTIParameterWidth", (profileNamespace getVariable "loadTIParameterWidthLocal")];
+} else {
+	missionNamespace setVariable ["setTIParameterWidth", 0.8];
+};
+
+if !(isNil {
 	profileNamespace getVariable "LAltitudeP"
 }) then {
 	missionNamespace setVariable ["LAltitude", (profileNamespace getVariable "LAltitudeP")];
@@ -105,6 +127,7 @@ removeAllAssignedItems player;
 player addWeapon "ItemMap";
 player addRating 1000000;
 player enableStamina false;
+
 // VileAce added - small performance increase
 {
 	player disableAI _x;
@@ -112,6 +135,9 @@ player enableStamina false;
 player enableAI 'MOVE';
 player setCustomAimCoef (missionNameSpace getVariable "lesniperpour");
 player setUnitRecoilCoefficient (missionNameSpace getVariable "lesniperpour1");
+
+// setTIParameter ["OutputRangeStart", (missionNameSpace getVariable "setTIParameterStart")];
+// setTIParameter ["OutputRangeWidth", (missionNameSpace getVariable "setTIParameterWidth")];
 player enableFatigue false;
 if (player isKindOf "B_support_Mort_f") then {
 	enableEngineArtillery true;
@@ -142,7 +168,8 @@ if (!(uidd in (missionNameSpace getVariable "guirer"))) then {
 	};
 };
 
-private _isElite = false;
+private _isElite = true;
+private _displayEliteMsg = false;
 missionNamespace setVariable ["isNakElite", _isElite];
 
 if (!(uidd in (missionNameSpace getVariable "lesigneur"))) then {
@@ -154,6 +181,7 @@ if (!(uidd in (missionNameSpace getVariable "lesigneur"))) then {
 	};
 } else {
 	_isElite = true;
+	_displayEliteMsg = true;
 	missionNamespace setVariable ["isNakElite", _isElite];
 };
 
@@ -189,20 +217,15 @@ player addEventHandler ["GetInMan", {
 	missionNamespace setVariable ["lesnondesjouer", 0];
 	[] spawn ROSE_fnc_lecrew;
 	if (_vehicle isKindOf "Air") then {
-		diag_log "callingGetInMan is kind air";
 		if !((typeOf _vehicle) in ["B_Plane_Fighter_01_F", "B_Plane_Fighter_01_Stealth_F", "O_Plane_Fighter_02_F", "B_Plane_CAS_01_dynamicLoadout_F", "I_Plane_Fighter_03_dynamicLoadout_F", "O_Plane_CAS_02_dynamicLoadout_F"]) then {
-			diag_log "calling GetInMan vehicle type match";
 			missionNamespace setVariable ["getinpos", (getPos _vehicle)];
-			diag_log format [" _ledriver %1", (getPos _vehicle)];
 		};
 	};
 	// VileAce added to add flag to all land vehicles 092920
 	if (_vehicle isKindOf "LandVehicle") then {
-		diag_log "callingGetInMan is kind Land Vehicle";
 		if ({
 			isPlayer _x
 		} count crew _vehicle > 0) then {
-			diag_log "Crew greater than 1 adding flag";
 			_vehicle forceFlagTexture "Media\Images\NAKSquadFlagWhite.paa";
 			_vehicle setPlateNumber (name player);
 		};
@@ -211,25 +234,23 @@ player addEventHandler ["GetInMan", {
 
 player addEventHandler ["GetOutMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
-	diag_log "calling GetoutMan 000";
+
 	missionNamespace setVariable ["lesnondesjouer", 1];
 	if (_vehicle isKindOf "Air") then {
 		if !((typeOf _vehicle) in ["B_Plane_Fighter_01_F", "B_Plane_Fighter_01_Stealth_F", "O_Plane_Fighter_02_F", "B_Plane_CAS_01_dynamicLoadout_F", "I_Plane_Fighter_03_dynamicLoadout_F", "O_Plane_CAS_02_dynamicLoadout_F"]) then {
-			diag_log "calling GetOutMan is typeof check passed";
 			private _getinpos = missionNameSpace getVariable "getinpos";
 			private _getoutpos = getPos _vehicle;
 			private _crewUID = getPlayerUID _unit;
 			private _list = fullCrew [_vehicle, "driver"];
-			diag_log format [" list %1, _crewUID %2, _getoutpos %3, _getinpos %4", _list, _crewUID, _getoutpos, _getinpos];
+
 			if ((_getinpos distance _getoutpos) > 1000) then {
-				diag_log "calling GetOutMan greater than 1000 for points";
 				if !(_role isEqualTo "driver") then {
 					[_crewUID] remoteExecCall ["NAK_fnc_vbnet20", -2, false];
 				};
 				if (count _list >= 0) then {
 					private _ledriver = _list select 0;
 					private _ledriveruid = getPlayerUID (_ledriver select 0);
-					diag_log format [" _ledriver %1, _ledriveruid %2", _ledriver, _ledriveruid];
+
 					if (alive _unit) then {
 						[_ledriveruid] remoteExecCall ["NAK_fnc_vbnet21", -2, false];
 					};
@@ -396,11 +417,13 @@ player addEventHandler ["InventoryClosed", {
 		switch (missionNamespace getVariable 'lesorelle') do {
 			case 1: {
 				missionNamespace setVariable ['lesorelle', 2];
-				2 fadeSound 0.1; hint 'EARPLUGS FITTED';
+				2 fadeSound 0.1;
+				hint 'EARPLUGS FITTED';
 			};
 			case 2: {
 				missionNamespace setVariable ['lesorelle', 1];
-				2 fadeSound 1; hint 'EARPLUGS REMOVED';
+				2 fadeSound 1;
+				hint 'EARPLUGS REMOVED';
 			};
 		};
 	};
@@ -493,7 +516,42 @@ waitUntil {
 // VileAce moved to end of init was line 140
 [] spawn ROSE_fnc_lilkiller;
 
-_lestasks = ["aoTask111", "aoTask112", "aoTask113", "tankTask", "tankTasks", "aoTask1", "aoTask2", "aoTask3", "aoTask4", "aoTask6", "aoTask10", "aoTask11", "aoTask12", "aoTask15", "MainAoTask", "mamanAoTask", "aoTask16", "priorArtyTask", "hqResearchTask", "secureChopperTask"];
+_lestasks = [
+	"DefendAoTask",
+	"MainAoTask",
+	"aoTask1",
+	"aoTask10",
+	"aoTask11",
+	"aoTask111",
+	"aoTask112",
+	"aoTask113",
+	"aoTask12",
+	"aoTask15",
+	"aoTask16",
+	"aoTask2",
+	"aoTask3",
+	"aoTask4",
+	"aoTask6",
+	"hqResearchTask",
+	"mamanAoTask",
+	"newAoTask1",
+	"newAoTask10",
+	"newAoTask11",
+	"newAoTask12",
+	"newAoTask2",
+	"newAoTask3",
+	"newAoTask3_1",
+	"newAoTask4",
+	"newAoTask5",
+	"newAoTask6",
+	"newAoTask7",
+	"newAoTask8",
+	"newAoTask9",
+	"priorArtyTask",
+	"secureChopperTask",
+	"tankTask",
+	"tankTasks"
+];
 sleep 1;
 {
 	[_x, "ASSIGNED", false] call BIS_fnc_taskSetState;
@@ -524,11 +582,22 @@ private _eliteShopHintTitle = "<t color='#fce253' size='1.3' shadow='1' shadowCo
 private _eliteShopHint = "<t size='1' shadow='1' shadowColor='#000000' align='center'>50% Discounts on all Items</t><br/><br/>";
 
 /* Display basic hint msg*/
-hint parseText (_hintLogo + _EarPlugsTakenHint + _HowtoEarPlugsHint + _PlayerJumpHint + _HowtoJumpHint + _HolsterHint + _HowtoHolsterHint + _ReviveHint+ _HowtoRevive + _ViewSettingHint + _HowtoViewSettingHint);
-
-sleep 10;
-
-/* Display basic Elite Hint*/
-if(_isElite) then {
-	hint parseText (_hintLogo + _elitePilotHintTitle + _elitePilotHint + _eliteShopHintTitle + _eliteShopHint);
-};
+	hint parseText (_hintLogo + _EarPlugsTakenHint + _HowtoEarPlugsHint + _PlayerJumpHint + _HowtoJumpHint + _HolsterHint + _HowtoHolsterHint + _ReviveHint+ _HowtoRevive + _ViewSettingHint + _HowtoViewSettingHint);
+	
+	sleep 10;
+	
+/* Display basic Elite hint*/
+	if (_displayEliteMsg) then {
+		hint parseText (_hintLogo + _elitePilotHintTitle + _elitePilotHint + _eliteShopHintTitle + _eliteShopHint);
+	};
+	
+	sleep 10;
+	
+	private _annivaisary = "<t color='#fce253' size='1.3' shadow='1' shadowColor='#000000' align='center'>NAK Squad is celebrating its 7th anniversary!</t><br/>";
+	private _annivaisaryMsg1 = "<t size='1' shadow='1' shadowColor='#000000' align='center'>NAK Squad is celebrating its 7th anniversary! We will host several special events across all servers during the month of October.</t><br/><br/>";
+	private _annivaisaryMsg2 = "<t size='1' shadow='1' shadowColor='#000000' align='center'>We hope you been paying attention to our servers recently, because if you did we have some surprises coming. </t><br/><br/>";
+	private _annivaisaryMsg3 = "<t size='1' shadow='1' shadowColor='#000000' align='center'>To know more visit www.naksquad.net and stay tuned every Monday, Thursday and Saturday of October.</t><br/><br/>";
+	private _annivaisaryMsg4 = "<t size='1' shadow='1' shadowColor='#000000' align='center'>We invite you to join us during this celebration and experience everything we have for you.</t><br/><br/>";
+	private _annivaisaryMsg5 = "<t size='1' shadow='1' shadowColor='#000000' align='center'>Have fun!</t><br/><br/>";
+	
+	//hint parseText (_hintLogo + _annivaisary + _annivaisaryMsg1 + _annivaisaryMsg2 + _annivaisaryMsg3 + _annivaisaryMsg4 + _annivaisaryMsg5);

@@ -1,4 +1,4 @@
-private ["_lastMai1","_chooseyourdestiny","_display","_combo1","_combo2","_combo3","_combo4","_combo5","_combo6","_combo7","_combo8","_combo9","_combo10","_combo11","_combo12","_combo13","_combo14"];
+private ["_pylonName", "_pylonDesc", "_index", "_claws", "_pylonNameARR", "_pylonDescAAR", "_thecounter","_lastMai1","_chooseyourdestiny","_display","_combo1","_combo2","_combo3","_combo4","_combo5","_combo6","_combo7","_combo8","_combo9","_combo10","_combo11","_combo12","_combo13","_combo14"];
 
 disableSerialization;
 _combo1 = 60001;
@@ -8,6 +8,8 @@ _combo4 = 60004;
 _combo5 = 60005;
 //_chooseyourdestiny = 16727300;
 _display = _this # 0;
+
+[] call AVI_fnc_clearCtrlEvent;
 
 
 
@@ -115,3 +117,13 @@ _index = lbAdd [1000002, _x];
 
 (_display displayCtrl 1000001) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName12"];
 (_display displayCtrl 1000002) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName12"];
+
+missionNamespace setVariable ["listboxCtrlEhLit", [
+	(_display displayCtrl _combo1),
+	(_display displayCtrl _combo2),
+	(_display displayCtrl _combo3),
+	(_display displayCtrl _combo4),
+	(_display displayCtrl _combo5),
+	(_display displayCtrl 1000001),
+	(_display displayCtrl 1000002)
+]];

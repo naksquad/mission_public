@@ -1,5 +1,5 @@
 leblesser = _this # 0;
-_dataplayrowner = _this # 1;
+private _dataplayrowner = _this # 1;
 
 [leblesser] remoteExec ["removeAllActions", 0, true];
 removeAllActions leblesser;
@@ -25,9 +25,9 @@ removeAllActions leblesser;
     true                                                                                // Show in unconscious state 
 ] remoteExec ["BIS_fnc_holdActionAdd",0,( _this select 0)];    
 
-_lalapos = getpos leblesser;
-_lenondu = name leblesser;
-_uidr = getPlayerUID leblesser;
+private _lalapos = getpos leblesser;
+private _lenondu = name leblesser;
+private _uidr = getPlayerUID leblesser;
 sleep 5;
 missionNamespace setVariable ["checkrevive", 0, _dataplayrowner];
 

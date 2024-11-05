@@ -1,6 +1,6 @@
 //test.sqf
 disableSerialization;
-private ["_thecounter","_theindexCounter","_claws","_pylonNameARR","_pylonDescAAR","_pylonName","_pylonDesc","_lastMai1","_chooseyourdestiny","_display","_combo1","_combo2","_combo3","_combo4","_combo5","_combo6","_combo7","_combo8","_combo9","_combo10","_combo11","_combo12","_combo13","_combo14"];
+private ["_index", "_thecounter","_theindexCounter","_claws","_pylonNameARR","_pylonDescAAR","_pylonName","_pylonDesc","_lastMai1","_chooseyourdestiny","_display","_combo1","_combo2","_combo3","_combo4","_combo5","_combo6","_combo7","_combo8","_combo9","_combo10","_combo11","_combo12","_combo13","_combo14"];
 
 //Define idc's for controls for easy access
 _combo1 = 6001;
@@ -20,6 +20,8 @@ _combo13 = 6013;
 _chooseyourdestiny = 402300;
 //store display, passed from onLoad
 _display = _this # 0;
+
+[] call AVI_fnc_clearCtrlEvent;
 
 
 
@@ -292,3 +294,22 @@ _index = lbAdd [_chooseyourdestiny, _x];
 
 (_display displayCtrl 1000001) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName3"];
 (_display displayCtrl 1000002) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName3"];
+
+missionNamespace setVariable ["listboxCtrlEhLit", [
+	(_display displayCtrl _combo1),
+	(_display displayCtrl _combo2),
+	(_display displayCtrl _combo3),
+	(_display displayCtrl _combo4),
+	(_display displayCtrl _combo5),
+	(_display displayCtrl _combo6),
+	(_display displayCtrl _combo7),
+	(_display displayCtrl _combo8),
+	(_display displayCtrl _combo9),
+	(_display displayCtrl _combo10),
+	(_display displayCtrl _combo11),
+	(_display displayCtrl _combo12),
+	(_display displayCtrl _combo13),
+	(_display displayCtrl _chooseyourdestiny),
+	(_display displayCtrl 1000001),
+	(_display displayCtrl 1000002)
+]];

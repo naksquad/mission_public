@@ -1,9 +1,7 @@
  leblesser = _this # 0;
  lerevivber = _this # 1;
  le_id = _this # 2;
-/*
-["",1,leblesser] call BIS_fnc_reviveOnState; 
-leblesser setVariable ["#rev", 1];*/
+
 
  terminator1 = {
             _uid = _this # 0;

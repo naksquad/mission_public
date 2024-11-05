@@ -1,28 +1,24 @@
 private _theadmins = _this # 0;
 removeAllActions _theadmins;
-_lenondu = name _theadmins;
-_theadmins addAction ["<t color='#fcdc35'>PLAYER MENU</t>", {createDialog 'nastynak007';},[],-100,false,true,"","true",-1,false,"",""];
- 
-// remoteexec function on _NAKtarget
-// Function 	missionNamespace setVariable ["themasterrankin", 5000]; missionNamespace setVariable ["lock1", 0];
+private _lenondu = name _theadmins;
+_theadmins addAction ["<t color='#fcdc35'>PLAYER MENU</t>", {
+	createDialog 'nastynak007';
+}, [], -100, false, true, "", "true", -1, false, "", ""];
 
-_uidr = getPlayerUID _theadmins;
+private _uidr = getPlayerUID _theadmins;
 
-	_action = "Funds Added and Colldown Removed";
-	_log = format ["Admin: %1, UID: %2 Action: %3 for %4", _lenondu, _uidr, _action, (name _NAKtarget)];
-	sendlogfile = [_log,"AdminMenuLog"];
-	publicVariableServer "sendlogfile";
+private _action = "Funds Added and Colldown Removed";
+private _log = format ["Admin: %1, UID: %2 Action: %3 for %4", _lenondu, _uidr, _action, (name _NAKtarget)];
+sendlogfile = [_log, "AdminMenuLog"];
+publicVariableServer "sendlogfile";
 
-_NAKtarget = cursorTarget;
+private _NAKtarget = cursorTarget;
 if (!isNull _NAKtarget) then {
 	if (isPlayer _NAKtarget) then {
-	
-		[] remoteexec ["ROSE_fnc_addFundsAndRemoveCoolDown", cursorTarget, FALSE];
+		[] remoteexec ["ROSE_fnc_addFundsAndRemoveCoolDown", cursorTarget, false];
 
-		_text = format ['%1 AFARC %2',_lenondu, _NAKtarget];
-		_text remoteExec ['systemChat',-2];
-//Temp remove until other steps work
-//[_text,"AdminMenuLog"] remoteExecCall ["A3Log", 2];
+		private _text = format ['%1 AFARC %2', _lenondu, _NAKtarget];
+		_text remoteExec ['systemChat', -2];
 
 		hint "Funds Added and Colldown Removed";
 	} else {
@@ -32,9 +28,9 @@ if (!isNull _NAKtarget) then {
 	hint "No Object/Player Selected.";
 };
 
-
-_jeova = ["uav1"]; 
+private _jeova = ["uav1"];
 if (str _theadmins in _jeova) then {
-_theadmins addAction ["<t color='#ffc700'>Death Star Menu System</t>", {createDialog 'playeruavspawaka'}];
+	_theadmins addAction ["<t color='#ffc700'>Death Star Menu System</t>", {
+		createDialog 'playeruavspawaka'
+	}];
 };
-

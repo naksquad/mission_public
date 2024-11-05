@@ -1,6 +1,6 @@
-private _theadmins = _this # 0;
+private ['_theadmins', '_lenondu', '_uidr', '_action', '_log', '_jeova','_vehIndex','_iconL','_iconR','_title','_text','_Mines','_mineCount', '_pos'];
+_theadmins = _this # 0;
 removeAllActions _theadmins;
-//[( _this select 0),["<t color='#fcdc35'>PLAYER MENU</t>", {createDialog 'nastynak007';},[],1,false,true,"",""]] remoteExec ["addAction",-2];
 _lenondu = name _theadmins;
 _uidr = getPlayerUID _theadmins;
 

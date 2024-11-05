@@ -1,3 +1,4 @@
+private ['_theadmins', '_lenondu', '_uidr', '_action', '_log', '_jeova','_vehIndex'];
 _theadmins = _this # 0;
 _lenondu = name _theadmins;
 _uidr = getPlayerUID _theadmins;
@@ -8,8 +9,6 @@ _uidr = getPlayerUID _theadmins;
 	publicVariableServer "sendlogfile";
 	
 removeAllActions _theadmins;
-//[( _this select 0),["<t color='#fcdc35'>PLAYER MENU</t>", {createDialog 'nastynak007';},[],1,false,true,"",""]] remoteExec ["addAction",-2];
-//VileAce remoteExec was causing duplicate entries
 
 _theadmins addAction ["<t color='#fcdc35'>PLAYER MENU</t>", {createDialog 'nastynak007';},[],-100,false,true,"","true",-1,false,"",""];
 

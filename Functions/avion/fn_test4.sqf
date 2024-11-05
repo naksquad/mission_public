@@ -1,6 +1,6 @@
 //test.sqf
 disableSerialization;
-private ["_lastMai1","_chooseyourdestiny","_display","_combo1","_combo2","_combo3","_combo4","_combo5","_combo6","_combo7","_combo8","_combo9","_combo10","_combo11","_combo12","_combo13","_combo14"];
+private ["_pylonName", "_pylonDesc", "_index", "_lastMai1","_chooseyourdestiny","_display","_combo1","_combo2","_combo3","_combo4","_combo5","_combo6","_combo7","_combo8","_combo9","_combo10","_combo11","_combo12","_combo13","_combo14"];
 
 //Define idc's for controls for easy access
 _combo1 = 7005;
@@ -18,15 +18,14 @@ _chooseyourdestiny = 502300;
 //store display, passed from onLoad
 _display = _this # 0;
 
-
-
+[] call AVI_fnc_clearCtrlEvent;
 
 
 //combo 1
-_claws = "B_Plane_Fighter_01_Stealth_F" getCompatiblePylonMagazines 5;
-_pylonNameARR = [];
-_pylonDescAAR = [];
-_thecounter = 0;
+private _claws = "B_Plane_Fighter_01_Stealth_F" getCompatiblePylonMagazines 5;
+private _pylonNameARR = [];
+private _pylonDescAAR = [];
+private _thecounter = 0;
 {
 	_pylonName =  getText (configfile >> "CfgMagazines" >> _x >> "displayName");
 	_pylonNameARR pushBack _pylonName;
@@ -203,9 +202,20 @@ _index = lbAdd [1000002, _x];
 (_display displayCtrl _combo9)  ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_scriptName4"];
 (_display displayCtrl _chooseyourdestiny) ctrlAddEventHandler ["LBSelChanged","_this call AVIP_fnc_f35s_aolf_i_trust"];
 
-
-//(_display displayCtrl _combo13) ctrlAddEventHandler ["LBSelChanged","_this execVM 'scriptName3"];
-//(_display displayCtrl _combo10)  ctrlAddEventHandler ["LBSelChanged","[_this select 0, _this select 1] execVM 'scriptNameclear;"];
-
 (_display displayCtrl 1000001) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName4"];
 (_display displayCtrl 1000002) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName4"];
+
+missionNamespace setVariable ["listboxCtrlEhLit", [
+	(_display displayCtrl _combo1),
+	(_display displayCtrl _combo2),
+	(_display displayCtrl _combo3),
+	(_display displayCtrl _combo4),
+	(_display displayCtrl _combo5),
+	(_display displayCtrl _combo6),
+	(_display displayCtrl _combo7),
+	(_display displayCtrl _combo8),
+	(_display displayCtrl _combo9),
+	(_display displayCtrl _chooseyourdestiny),
+	(_display displayCtrl 1000001),
+	(_display displayCtrl 1000002)
+]];

@@ -272,14 +272,8 @@ _golden = [
 [0,2]
 ];
 
-
-
-//diag_log format ["_ctrl %1, _index %2, _lenonduveh %3, _prayGod %4, _list_selection %5", _ctrl, _index,_lenonduveh,_prayGod,_list_selection];
-
 _Custom_Skin_class = missionNamespace getVariable "Custom_Skin_class";
 _la_voiture = missionNamespace getVariable "theskcpveh";
-
-//diag_log format ["_Custom_Skin_class %1, _la_voiture %2", _Custom_Skin_class, _la_voiture];
 
 _selected_camo_class_name = _Custom_Skin_class select _list_selection;
 
@@ -291,13 +285,13 @@ _cnt = count _lestextures;
 _la_couleur = "Media\vehicleTextures\" + _selected_camo_class_name + ".paa";
 
 missionNamespace setVariable ["Custom_SkDB", _la_couleur];
-diag_log format ["_la_voiture %1", _la_voiture];
+
 _num = _vialace findIf {_x isEqualTo (typeof _la_voiture)};
 
-diag_log format ["_num %1", _num];
+
 if !(_num == -1) then {
 	_lenumb =  _golden select _num;
-	diag_log format ["_lenumb%1", _lenumb];
+
 	if !(isEngineOn _la_voiture) then {
 		{
 			

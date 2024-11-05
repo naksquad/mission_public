@@ -1,6 +1,6 @@
-_theunitca = _this # 1;
+private _theunitca = _this # 1;
 
-_uidr = getPlayerUID _theunitca;
+private _uidr = getPlayerUID _theunitca;
 
 sleep 1;
 

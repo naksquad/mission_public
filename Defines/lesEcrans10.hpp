@@ -338,6 +338,66 @@ class playersetting
 			w = 0.0590625 * safezoneW;
 			h = 0.028 * safezoneH;
 		};
+
+		class thOutputRangeStart: RscStructuredText
+		{
+			idc = 191112;
+
+			text = "<t color='#ffc600'>Select Thermal Output Value :</t>"; //--- ToDo: Localize;
+			x = 0.276875 * safezoneW + safezoneX;
+			y = 0.650 * safezoneH + safezoneY;
+			w = 0.150937 * safezoneW;
+			h = 0.028 * safezoneH;
+		};
+		class thOutputRangeStartSlider: RscSlider
+		{
+			idc = 191113;
+			onSliderPosChanged = "[_this] spawn ROSE_fnc_VTrinity006;";
+
+			x = 0.4475 * safezoneW + safezoneX;
+			y = 0.650 * safezoneH + safezoneY;
+			w = 0.118125 * safezoneW;
+			h = 0.028 * safezoneH;
+		};
+		class thOutputRangeStartInputText: RscStructuredText
+		{
+			idc = 191114;
+			text = ""; //--- ToDo: Localize;
+			x = 0.567988 * safezoneW + safezoneX;
+			y = 0.650 * safezoneH + safezoneY;
+			w = 0.0590625 * safezoneW;
+			h = 0.028 * safezoneH;
+		};
+
+		class thOutputRangeWidth: RscStructuredText
+		{
+			idc = 291112;
+
+			text = "<t color='#ffc600'>Select Thermal Output Width :</t>"; //--- ToDo: Localize;
+			x = 0.276875 * safezoneW + safezoneX;
+			y = 0.700 * safezoneH + safezoneY;
+			w = 0.150937 * safezoneW;
+			h = 0.028 * safezoneH;
+		};
+		class thOutputRangeWidthSlider: RscSlider
+		{
+			idc = 291113;
+			onSliderPosChanged = "[_this] spawn ROSE_fnc_VTrinity007;";
+
+			x = 0.4475 * safezoneW + safezoneX;
+			y = 0.700 * safezoneH + safezoneY;
+			w = 0.118125 * safezoneW;
+			h = 0.028 * safezoneH;
+		};
+		class thOutputRangeWidthInputText: RscStructuredText
+		{
+			idc = 291114;
+			text = ""; //--- ToDo: Localize;
+			x = 0.567988 * safezoneW + safezoneX;
+			y = 0.700 * safezoneH + safezoneY;
+			w = 0.0590625 * safezoneW;
+			h = 0.028 * safezoneH;
+		};
 		
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END

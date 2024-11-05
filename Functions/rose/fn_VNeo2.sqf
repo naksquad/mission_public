@@ -47,7 +47,6 @@ switch (_TheGodPhase3) do {
     case "Light Gray": {((uiNamespace getVariable "ledisplaysav") displayCtrl 15110) ctrlSetStructuredText parseText format ["<t color='#D3D3D3'>%1</t>", lenon];missionNamespace setVariable ["NAK_iconColor1", [0.83,0.83,0.83]];}; //LIGHTGRAY
     case "Gray": {((uiNamespace getVariable "ledisplaysav") displayCtrl 15110) ctrlSetStructuredText parseText format ["<t color='#808080'>%1</t>", lenon];missionNamespace setVariable ["NAK_iconColor1", [0.5,0.5,0.5]];}; //GRAY
     case "Dark Gray": {((uiNamespace getVariable "ledisplaysav") displayCtrl 15110) ctrlSetStructuredText parseText format ["<t color='#333333'>%1</t>", lenon];missionNamespace setVariable ["NAK_iconColor1", [0.2,0.2,0.2]];}; //DARKGRAY
-
 };
 
 

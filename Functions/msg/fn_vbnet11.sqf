@@ -1,11 +1,12 @@
-_thelocationof = _this # 0;
-				
-//	if(player distance _lasirene < 8000) then
+private _thelocationof = _this # 0;
+
+if (!hasInterface && {!isServer}) exitWith{};		
+
 if(vehicle player != player) then
 {
 	if (isEngineOn (vehicle player)) then 
 	{
-		if (player distance (getMarkerPos _thelocationof) < 8000 ) then 
+		if (player distance _thelocationof < 8000 ) then 
 		{
 			titleText ["<t color='#ff0000' size='2'>RED ALERT EMP Activated!</t><br/>***********", "PLAIN", -1, true, true];
 			playSound "empkillers";                       

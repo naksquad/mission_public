@@ -1,4 +1,4 @@
-_unit = _this select 0;
+private _unit = _this select 0;
 
 /*****************************************************************
 	following section to run only on server.

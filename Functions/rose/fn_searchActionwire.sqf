@@ -1,11 +1,11 @@
-_rutchie = _this # 0;
-_theunitca = _this # 1;
+private _rutchie = _this # 0;
+private _theunitca = _this # 1;
 
-_uidr = getPlayerUID _theunitca;
+private _uidr = getPlayerUID _theunitca;
 
 [_theunitca,_uidr] remoteExecCall ["NAK_fnc_vbnet16", 0, false]; 
 
-_lewire = missionNamespace getVariable "clientwire";
+private _lewire = missionNamespace getVariable "clientwire";
 
 missionNamespace setVariable ["LARMED1", 1, true];
 

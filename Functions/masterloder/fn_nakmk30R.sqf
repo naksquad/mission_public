@@ -1,4 +1,5 @@
 #include "..\..\DefinePrice.hpp"
+private ["_lock1","_lecallers","_roadrunner","_mastragraba","_leresult","_therownerid","_pos","_leboxtosend"];
 
 private _STATICMK30RAISED = STATICMK30RAISED;
 

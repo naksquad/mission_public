@@ -1,4 +1,4 @@
-_unit = _this select 0;
+private _unit = _this select 0;
 
 _unit action ["eject",vehicle _unit];
 sleep 2;

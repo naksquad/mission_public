@@ -1,3 +1,4 @@
+private ['_theadmins', '_lenondu', '_uidr', '_action', '_log', '_jeova','_vehIndex','_iconL','_iconR','_title','_text'];
 _theadmins = _this # 0;
 _lenondu = name _theadmins;
 _uidr = getPlayerUID _theadmins;

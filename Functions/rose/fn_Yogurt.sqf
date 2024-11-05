@@ -1,6 +1,3 @@
-											   
-								   
-
 player createDiarySubject ["NAKInfo","NAK Information"];
 player createDiarySubject ["NAKRank","Ranking System"];
 player createDiarySubject ["NAKPAD","NAK PAD"];
@@ -287,7 +284,7 @@ Definition: There are a limited number of pilot positions. It is expected that i
 <font size= '14' color='#ab2b2c' face='RobotoCondensedBold'>First Offense: 24 hour ban.</font><br />
 Definition: Do not argue with an admin. If you or a friend has been kicked or banned, and you feel it was unwarranted, there are ways you can appeal the ban and/or report the admin. These methods were detailed in the “Complaints” section at the bottom of this page. Abuse reports are reviewed by the Chiefs’ of Staff and are taken seriously. If you would like to speak to one of the Chief of Staff, join TeamSpeak and we will be happy to speak with you, but very rarely will we reverse the ruling of another admin without an appeal being placed.<br />
 <br />
-<font size= '14' color='#fce253' face='RobotoCondensedBold'>RULE #11) NO PILOTS, UAV OPERATOR, OR ATC MAY PLAY WITHOUT BEING ON THE NAK SQUAD TEAMSPEAK SERVER (EXCLUDING NAK ELITE). NO PILOT MAY BE AFK. NO PLAYERS IN THE “PILOTS” CHANNEL MAY MUTE ALL COMMUNICATION, WHICH INCLUDES BEING “AWAY” IN TEAMSPEAK.</font><br />
+<font size= '14' color='#fce253' face='RobotoCondensedBold'>RULE #11) NO PILOTS, UAV OPERATOR, OR ATC MAY PLAY WITHOUT BEING ON THE NAK SQUAD TEAMSPEAK SERVER (INCLUDING NAK ELITE). NO PILOT MAY BE AFK. NO PLAYERS IN THE “PILOTS” CHANNEL MAY MUTE ALL COMMUNICATION, WHICH INCLUDES BEING “AWAY” IN TEAMSPEAK.</font><br />
 <font size= '14' color='#ab2b2c' face='RobotoCondensedBold'>First Offense: Written warning.</font><br />
 <font size= '14' color='#ab2b2c' face='RobotoCondensedBold'>Second Offense: Kick from server.</font><br />
 <font size= '14' color='#ab2b2c' face='RobotoCondensedBold'>Third Offense: 1 hour ban.</font><br />

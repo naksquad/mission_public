@@ -12,7 +12,7 @@ _transp_bar = _display displayCtrl 8902;
 _skin_list_box = _display displayCtrl 1500; 
 _kit_list_box = _display displayCtrl 1501;
 
-_Custom_Skin_box = _display displayCtrl 15891;
+private _Custom_Skin_box = _display displayCtrl 15891;
 
 _combobraker1 =  9100;
 
@@ -32,7 +32,7 @@ _transp_bar sliderSetPosition 0;
 
 
 {
-_index = lbAdd [_combobraker1, _x];
+	private _index = lbAdd [_combobraker1, _x];
 } forEach  ["Red [1,0,0,1]","Dark Red [0.55,0,0,1]","Pink [1,.75,.80,1]","Deep Pink [1,0.08,0.58,1]","Orange Red [1,0.27,0,1]","Dark Orange [1,0.55,0,1]","Orange [1,0.65,0,1]","Gold 1,0.84,0,1]","Yellow [1,1,0,1]","Violet [0.93,0.51,0.93,1]","Magenta [1,0, 1,1]","Dark Violet [0.58,0,0.83,1]","Purple [0.5,0,0.5,1]","Indigo [0.29,0,0.51,1]","Lime [0, 1,0,1]","Forest Green [0.13,0.55,0.13,1]","Green [0,0.5,0,1]","Yellow Green [0.6,0.8,0.2,1]","Khaki [0.94,0.9,0.55,1]",
 "Dark Khaki [0.74,0.72,0.42,1]","Olive Drab [0.42,0.56,0.14,1]","Olive [0.5,0.5,0,1]","Dark Olive Green [0.33,0.42,0.18,1]","Dark Sea Green [0.56,0.74,0.55,1]","Light Sea Green [0.13,0.7,0.67,1]","Teal [0,0.5,0.5,1]","Cyan [0,0.5,0.5,1]",
 "Light Cyan [0.88, 1, 1,1]","Turquoise [0.25,0.88,0.82,1]","Steel Blue [0.27,0.51,0.71,1]","Light Blue [0.68,0.85,0.9,1]","Royal Blue [0.25,0.41,0.88,1]","Blue [0,0,1,1]","Dark Blue [0,0,0.55,1]","Tan [0.82,0.71,0.55,1]",
@@ -84,14 +84,13 @@ lbSetColor [_combobraker1, 42, [0.2,0.2,0.2,1]]; //DarkGray
 
 
 uiNamespace setVariable ["ledisplaysav007", _display]; 
-//diag_log format ["_le_vehicle %1, ", _le_vehicle];
 
 //Get all camouflages(texture sets)
 _camo_path = "true" configClasses (configfile >> "CfgVehicles" >>(typeof _le_vehicle) >> "TextureSources");
 _camo_class_names = [];
 _camo_display_names = [];
-_camo_cuztom_class = ["black_tiles","bloodshot","camo_orange","camo_pink","camo_red","carbon","carbon_circle","chocoChip","denim","digi","digi_black","digi_desert","digi_wood","doritos","drylands","hellokitty","hex","hippie","leopard","metal_tiles","micro_carbon","mtndew","murica","pride","psych","rainbow","rusty","sand","snake","stripes","stripes_NAK","stripes2","stripes3","swamp","tiger","unionjack","urban","water","wooddark","woodland","woodtiger"];
-_camo_cuztom_name = ["Black Tiles","Bloodshot","Camo Orange","Camo Pink","Camo Red","Carbon Fiber","Carbon Circle","Chocolate Chip","Denim","Digi","Digi Black","Digi Desert","Digi Wood","Doritos","Dry Lands","Hello Kitty","Hex","Hippie","Leopard","Metal Tiles","Micro Carbon","Mtn Dew","Murica","Pride","Psych","Rainbow","Rusty","Sand","Snake","Stripes","Stripes NAK","Stripes 1","stripes 2","Swamp","Tiger","Union Jack","Urban","Water","Wood Dark","Wood Land","Wood Tiger"];
+private _camo_cuztom_class = ["black_tiles","bloodshot","camo_orange","camo_pink","camo_red","carbon","carbon_circle","chocoChip","denim","digi","digi_black","digi_desert","digi_wood","doritos","drylands","hellokitty","hex","hippie","leopard","metal_tiles","micro_carbon","mtndew","murica","pride","psych","rainbow","rusty","sand","snake","stripes","stripes_NAK","stripes2","stripes3","swamp","tiger","unionjack","urban","water","wooddark","woodland","woodtiger"];
+private _camo_cuztom_name = ["Black Tiles","Bloodshot","Camo Orange","Camo Pink","Camo Red","Carbon Fiber","Carbon Circle","Chocolate Chip","Denim","Digi","Digi Black","Digi Desert","Digi Wood","Doritos","Dry Lands","Hello Kitty","Hex","Hippie","Leopard","Metal Tiles","Micro Carbon","Mtn Dew","Murica","Pride","Psych","Rainbow","Rusty","Sand","Snake","Stripes","Stripes NAK","Stripes 1","stripes 2","Swamp","Tiger","Union Jack","Urban","Water","Wood Dark","Wood Land","Wood Tiger"];
 
 {_class = configName _x; _camo_class_names pushBack _class;} forEach _camo_path;
 {_name = getText (configfile >> "CfgVehicles" >>(typeof _le_vehicle) >> "TextureSources" >> _x >> "DisplayName"); _camo_display_names pushBack _name;} forEach _camo_class_names;
@@ -100,8 +99,6 @@ _camo_cuztom_name = ["Black Tiles","Bloodshot","Camo Orange","Camo Pink","Camo R
 		_camo_display_names set [_forEachIndex, _camo_class_names select _forEachIndex];
 	};
 } forEach _camo_display_names;
-
-//diag_log format ["_camo_class_names %1, _camo_display_names %2", _camo_class_names, _camo_display_names];
 
 //Get all components(animations)
  _getvc = [_le_vehicle] call BIS_fnc_getVehicleCustomization;
@@ -120,7 +117,6 @@ _comp_display_names = [];
 	};
 } forEach _comp_display_names;
 
-//diag_log format ["_comp_class_names %1, _comp_display_names %2", _comp_class_names, _comp_display_names];
 missionNamespace setVariable ["theskcpveh", _le_vehicle];
 
 
@@ -144,14 +140,17 @@ if (true) then {
 
 
 if !(_camo_class_names isEqualTo []) then {
+	_kit_list_box ctrlRemoveAllEventHandlers "LBSelChanged";
 	_skin_list_box  ctrlAddEventHandler ["LBSelChanged","_this call NAK_fnc_vbnet22"];
 };
 
 if !(_camo_cuztom_name isEqualTo []) then {
+	_Custom_Skin_box ctrlRemoveAllEventHandlers "LBSelChanged";
 	_Custom_Skin_box  ctrlAddEventHandler ["LBSelChanged","_this call NAK_fnc_vbnet222"];
 };
 
 if !(_comp_class_names isEqualTo []) then {
+	_kit_list_box ctrlRemoveAllEventHandlers "LBSelChanged";
 	_kit_list_box  ctrlAddEventHandler ["LBSelChanged","_this call NAK_fnc_vbnet23"];
 };
 

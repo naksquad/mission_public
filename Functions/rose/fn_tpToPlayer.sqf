@@ -1,14 +1,14 @@
 //AlPMaker
 private _theadmins = _this # 0;
 removeAllActions _theadmins;
-_lenondu = name _theadmins;
+private _lenondu = name _theadmins;
 _theadmins addAction ["<t color='#fcdc35'>PLAYER MENU</t>", {createDialog 'nastynak007';},[],-100,false,true,"","true",-1,false,"",""];
-_jeova = ["uav1"]; 
+private _jeova = ["uav1"]; 
 if (str _theadmins in _jeova) then {
 _theadmins addAction ["<t color='#ffc700'>Death Star Menu System</t>", {createDialog 'playeruavspawaka'}];
 };
 
-_max = 10;
+private _max = 10;
 snext = false;
 plist = [];
 pselect5 = "";
@@ -39,7 +39,7 @@ smenu =
 	};
 	showCommandingMenu "#USER:_pmenu";
 };
-_j = 0;
+private _j = 0;
 _max = 10;
 if (_max>9) then {
 	_max = 10;
@@ -53,17 +53,17 @@ while {pselect5 == ""} do {
 };
 
 if (pselect5 != "exit") then {
-	_name = pselect5;
+	private _name = pselect5;
 	{
 		if(name _x == _name) then
 		{
 			hint format ["Teleporting to %1", _name];
-			_pos = _x getRelPos [2, 90];
+			private _pos = _x getRelPos [2, 90];
 			player setPos _pos;
 			
-			_uidr = getPlayerUID _theadmins;
-			_action = "TP to Player";
-			_log = format ["Admin: %1, UID: %2 Action: %3 %4", _lenondu, _uidr, _action, _name];
+			private _uidr = getPlayerUID _theadmins;
+			private _action = "TP to Player";
+			private _log = format ["Admin: %1, UID: %2 Action: %3 %4", _lenondu, _uidr, _action, _name];
 			sendlogfile = [_log,"AdminMenuLog"];
 			publicVariableServer "sendlogfile";
 		};

@@ -38,7 +38,7 @@ private _isBackpack = getNumber (configFile >> 'CfgVehicles' >> (typeOf _invento
 	params ['_unit','_inventory','_isBackpack'];
 	private ['_QS_buttonCtrl','_myPicture','_isOthersBackpack','_objectParent','_exit'];
 	waitUntil {(!isNull (findDisplay 602))};
-	_display = findDisplay 602;
+	private _display = findDisplay 602;
 	private _QS_ctrlCreateArray = ['RscPicture',12345];
 	_myPicture = _display ctrlCreate _QS_ctrlCreateArray;
 	_myPicture ctrlSetPosition [

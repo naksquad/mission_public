@@ -7,7 +7,7 @@ max_units_allowed = 1;
 
 if(isServer) then{
 	"recruit_newunit" addPublicVariableEventHandler {
-		_newunit = _this select 1;
+		private _newunit = _this select 1;
 		[_newunit] execFSM ("recruit_units\unit_lifecycle.fsm");
 	};
 };

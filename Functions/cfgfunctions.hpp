@@ -19,11 +19,8 @@ class ROSE
 		class att10 {};
 		class lecrew {};
 		class setentene {};
-	//	class setaa {};
 		class setentene007 {};
-		//class setaa007 {};
 		class getlecash {};
-	//	class lekillerspawn {};
 		class icons {};
 		class lilkiller {};
 		class sauter {};
@@ -63,7 +60,6 @@ class ROSE
 		class VA2 {};
 		class VA4 {};
 		class VA7 {};
-		//class VA8 {};
 		class VA9 {};
 		class VA10 {};
 		class VA11 {};
@@ -76,6 +72,8 @@ class ROSE
 		class VTrinity {};
 		class VTrinity1 {};
 		class VTrinity005 {};
+		class VTrinity006 {};
+		class VTrinity007 {};
 		class fgfivem {};
 		class vmonitor {};
 		class getMoney {};
@@ -92,6 +90,7 @@ class ROSE
 		//VileAce Added for Funds Added and Colldown Removed
 		class lepartrons2 {};
 		//class vile_intro {};
+		class displayToastMsg {};
 	};
 };
 
@@ -101,10 +100,34 @@ class AVI
 	class functions 
 	{
 		file = "Functions\avion";
+		class clearCtrlEvent {};
+		class lscriptName {};
+		class lscriptName01 {};
+		class lscriptName02 {};
+		class lscriptName1 {};
+		class lscriptName10 {};
+		class lscriptName11 {};
+		class lscriptName12 {};
+		class lscriptName13 {};
+		class lscriptName14 {};
+		class lscriptName2 {};
+		class lscriptName3 {};
+		class lscriptName4 {};
+		class lscriptName5 {};
+		class lscriptName6 {};
+		class lscriptName7 {};
+		class lscriptName8 {};
+		class lscriptName9 {};
+		class moneymaker {};
 		class scriptName {};
 		class scriptName01 {};
 		class scriptName02 {};
 		class scriptName1 {};
+		class scriptName10 {};
+		class scriptName11 {};
+		class scriptName12 {};
+		class scriptName13 {};
+		class scriptName14 {};
 		class scriptName2 {};
 		class scriptName3 {};
 		class scriptName4 {};
@@ -113,13 +136,15 @@ class AVI
 		class scriptName7 {};
 		class scriptName8 {};
 		class scriptName9 {};
-		class scriptName10 {};
-		class scriptName11 {};
-		class scriptName12 {};
-		class scriptName13 {};
-		class scriptName14 {};
 		class test {};
+		class test01 {};
+		class test02 {};
 		class test1 {};
+		class test10 {};
+		class test11 {};
+		class test12 {};
+		class test13 {};
+		class test14 {};
 		class test2 {};
 		class test3 {};
 		class test4 {};
@@ -128,38 +153,6 @@ class AVI
 		class test7 {};
 		class test8 {};
 		class test9 {};
-		class test10 {};
-		class test11 {};
-		class test12 {};
-		class test13 {};
-		class test01 {};
-		class test02 {};
-		class test14 {};
-		class lscriptName {};
-		class lscriptName01 {};
-		class lscriptName02 {};
-		class lscriptName1 {};
-		class lscriptName2 {};
-		class lscriptName3 {};
-		class lscriptName4 {};
-		class lscriptName5 {};
-		class lscriptName6 {};
-	//	class lscriptName6_1 {};
-		class lscriptName7 {};
-		class lscriptName8 {};
-		class lscriptName9 {};
-	//	class lscriptName9_1 {};
-		class lscriptName10 {};
-	//	class lscriptName10_1 {};
-		class lscriptName11 {};
-	//	class lscriptName11_1 {};
-		class lscriptName12 {};
-	//	class lscriptName12_1 {};
-		class lscriptName13 {};
-	//	class lscriptName13_1 {};
-		class lscriptName14 {};
-	//	class lscriptName14_1 {};
-		class moneymaker {};
 	};
 };
 
@@ -209,10 +202,6 @@ class NAK
 			class lightOff {};
 			class globalHint {};
 			class globalnotification {};
-			class vbnet {};
-			class t01 {};
-			class t02 {};
-			class t03 {};
 			class vbnet10 {};
 			class vbnet11 {};
 			class vbnet15 {};
@@ -271,163 +260,6 @@ class CHVD
 		class keyDownTerrain {};
 		class init {postInit = 1;};
 	};
-};
-
-class VCOM
-{
-	tag = "VCM";
-	
-	class FSM
-	{
-		file = "Vcom\FSMS";
-		
-		// group spawn VCM_fnc_SQUADBEH
-		class SQUADBEH 
-		{
-			ext = ".fsm";
-		};
-	};
-	
-	class Functions 
-	{
-		file = "Vcom\Functions\VCM_Functions";
-		
-		// [unitToRearm, rearmLocation] spawn VCM_fnc_ActRearm
-		class ActRearm {};
-		
-		// [unit, source, damage, instigator] call VCM_fnc_AIHIT;
-		class AIHIT {};
-		
-		// [group] call VCM_fnc_ArmStatics;
-		class ArmStatics {};
-		
-		// [callGroup, enemyGroup] call VCM_fnc_ArtyCall;
-		class ArtyCall {};
-		
-		// group call VCM_fnc_ArtyManage;
-		class ArtyManage {};
-		
-		// [entity, unit] call VCM_fnc_BoxNrst;
-		class BoxNrst {};
-		
-		// unit call VCM_fnc_CheckArty;
-		class CheckArty {};
-		
-		// [string] call VCM_fnc_Classname;
-		class Classname {};
-		
-		// [group, enemy] call VCM_fnc_ClearBuilding;
-		class ClearBuilding {};
-		
-		// unit call VCM_fnc_ClstEmy;
-		class ClstEmy {};
-		
-		// [list, object, order, script] call VCM_fnc_ClstObj;
-		class ClstObj {};
-		
-		// [unit, killer] call VCM_fnc_ClstWarn;
-		class ClstWarn {};
-		
-		// [group, searchDistance] call VCM_fnc_EmptyStatic;
-		class EmptyStatic {};
-		
-		// unit call VCM_fnc_EnemyArray;
-		class EnemyArray {};
-		
-		// [groupLeader, moveDistance] call VCM_fnc_FindCover;
-		class FindCover {};
-		
-		// [groupLeader] spawn VCM_fnc_FlankMove;
-		class FlankMove {};
-		
-		// [groupLeader, moveDistance] call VCM_fnc_ForceMove;
-		class ForceMove {};
-		
-		// unit call VCM_fnc_FriendlyArray;
-		class FriendlyArray {};
-		
-		// unit call VCM_fnc_FrmChnge;
-		class FrmChnge {};
-		
-		// group spawn VCM_fnc_Garrison;
-		class Garrison {};
-		
-		// group call VCM_fnc_GarrisonLight;
-		class GarrisonLight {};
-		
-		// unit call VCM_fnc_HasMine;
-		class HasMine {};
-		
-		// unit call VCM_fnc_HealSelf;
-		class HealSelf {};
-		
-		// [unit, weapon, muzzle, mode, ammo, magazine, bullet, gunner] call VCM_fnc_HearingAids;
-		class HearingAids {};
-		
-		// [object, searchRadius, precision, sortingOrder] call VCM_fnc_Heights;
-		class Heights {};
-		
-		// [] call VCM_fnc_IRCHECK;
-		class IRCHECK {};
-		
-		// group call VCM_fnc_KitChk;
-		class KitChk {};
-		
-		// [array, unitToReveal, revealAmount] call VCM_fnc_KnowAbout;
-		class KnowAbout {};
-		
-		// group call VCM_fnc_MedicalHandler
-		class MedicalHandler {};
-		
-		//[medic, injuredUnit] spawn VCM_fnc_MedicHeal;
-		class MedicHeal {};
-		
-		// [] spawn VCM_fnc_MineMonitor;
-		class MineMonitor {};
-		
-		// [unit, mineArray] spawn VCM_fnc_MinePlant;
-		class MinePlant {};
-		
-		// [gunner, backpackClassname, staticWeapon] call VCM_fnc_PackStatic;
-		class PackStatic {};
-		
-		// group call VCM_fnc_RearmSelf;
-		class RearmSelf {};
-		
-		// group call VCM_fnc_RMedics;
-		class RMedics {};
-		
-		// group call VCM_fnc_RStatics;
-		class RStatics {};
-		
-		// [unit, satchelArray] spawn VCM_fnc_SatchelPlant;
-		class SatchelPlant {};
-		
-		// group call VCM_fnc_SquadExc;
-		class SquadExc {};
-		
-		// group call VCM_fnc_WyptChk;
-		class WyptChk {};	
-		
-		//group call VCM_fnc_VehicleCommandeer;
-		class vehiclecommandeer {};
-		
-		//group call VCM_fnc_VehicleCheck;
-		class VehicleCheck {};
-
-		//group call VCM_fnc_VehicleMove;
-		class VehicleMove {};	
-
-		//group call VCM_fnc_IsTransport;
-		class IsTransport {};
-
-		//[_pos,_dist,_params] call VCM_fnc_isFlatEmpty;
-		class isFlatEmpty {};	
-
-		//[] call VCM_fnc_CBASettings;
-		class CBASettings {};
-	};		
-
 };
 
 class COB 

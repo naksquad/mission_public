@@ -1,5 +1,6 @@
 #include "..\..\DefinePrice.hpp"
-
+private ["_lock1","_lecallers","_AIPlayers","_mastragraba","_leresult","_therownerid","_pos","_leboxtosend","_toBoxItems","_toBoxWeapons",
+"_toBoxMags","_toBoxBackPacks"];
 private _RECRUITAIPRICE = RECRUITAIPRICE;
 
 if ((missionNameSpace getVariable "isNakElite")) then {

@@ -36,8 +36,4 @@ _pylons = missionNamespace getVariable "pilotGunnerah99";
 { _v removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon") } forEach getPylonMagazines _v;
 { _v setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex] } forEach _pylons;
 
-
-//_pilotGunnerah99 = ["","","","","",""];
-//missionNamespace setVariable ["pilotGunnerah99", _pilotGunnerah99];
-//[_v,_pylons] remoteExec ["AVI_fnc_moneymaker", 0, true];
 hint "Pylons Updated";

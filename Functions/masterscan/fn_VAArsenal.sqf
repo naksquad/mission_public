@@ -6,14 +6,14 @@ if ((missionNameSpace getVariable "isNakElite")) then {
 	_AAMATRIX = AAMATRIXELT;
 };
 
-_lock1 = missionNamespace getVariable "lock1";
+private _lock1 = missionNamespace getVariable "lock1";
 if (_lock1 == 1) exitWith {
 	playSound "AddItemFailed";
 	hint "Remote Arsenal System is not Available, Please Wait For The System To Cool Down";
 
 };
 
-_lecallers = missionNamespace getVariable "themasterrankin";
+private _lecallers = missionNamespace getVariable "themasterrankin";
 if (isNil "_lecallers") then
 {
 	missionNamespace setVariable ["themasterrankin", 0]; 
@@ -23,23 +23,23 @@ if (_lecallers >= _AAMATRIX) then
 	{
 		if (_lock1 == 0) then {
 		missionNamespace setVariable ["lock1", 1]; 
-		_roadrunner = missionNamespace getVariable "roadrunner";
+		private _roadrunner = missionNamespace getVariable "roadrunner";
 		if (_roadrunner == 1) then 
 		{	
-			_mastragraba = missionNamespace getVariable "mastragraba";
+			private _mastragraba = missionNamespace getVariable "mastragraba";
 			deleteVehicle _mastragraba;
 		};
 		playSound "AddItemOK";
 		closeDialog 0; 
 
-		_leresult = _lecallers - _AAMATRIX;
-		_therownerid = clientOwner;
+		private _leresult = _lecallers - _AAMATRIX;
+		private _therownerid = clientOwner;
 		missionNamespace setVariable ["themasterrankin", _leresult, _therownerid];
 		
 		sleep 0.01; 
-		_pos = getpos player;
+		private _pos = getpos player;
 
-		_leboxtosend =  createVehicle ["B_CargoNet_01_ammo_F", [8419.31,25116.1,-3.05176e-005], [], 0, 'NONE'];
+		private _leboxtosend =  createVehicle ["B_CargoNet_01_ammo_F", [8419.31,25116.1,-3.05176e-005], [], 0, 'NONE'];
 		_leboxtosend allowDamage false;
 		clearWeaponCargoGlobal _leboxtosend;
 		clearMagazineCargoGlobal _leboxtosend;

@@ -23,13 +23,13 @@ if ((missionNameSpace getVariable "isNakElite")) then {
 	_DSTATICMORTAR = DSTATICMORTARELT;
 };
 
-_dispay = _this # 0;
+private _dispay = _this # 0;
 disableSerialization;
 private _now = date;
 private _hour = _now select 3;
 private _min = _now select 4;
 
-_themasterrankin = missionNamespace getVariable "themasterrankin";
+private _themasterrankin = missionNamespace getVariable "themasterrankin";
 if (isNil "_themasterrankin") then {
 	missionNamespace setVariable ["themasterrankin", 0];
 	_themasterrankin = 0;
@@ -37,7 +37,7 @@ if (isNil "_themasterrankin") then {
 (_dispay displayCtrl 1997) ctrlSetStructuredText parseText format ["<t color='#ffc600'>Current Balance</t><t color='#0b6bbf'> $%1</t>", _themasterrankin];
 
 private _daytime = dayTime;
-_strTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
+private _strTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
 (_dispay displayCtrl 100011) ctrlSetStructuredText parseText format ["<t color='#0b6bbf'>%1</t>", _strTime];
 
 (_dispay displayCtrl 12001) ctrlSetTooltip _DSTATICAT;

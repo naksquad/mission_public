@@ -24,7 +24,7 @@ class mklnlkmfs: RscButton
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 
@@ -60,7 +60,7 @@ class mklnlkmfs: RscButton
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
  class combo1: RscCombo
 {
@@ -258,7 +258,7 @@ onLoad = "_this spawn AVI_fnc_test1;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 		class PresetDestiny: RscText
@@ -292,7 +292,7 @@ onLoad = "_this spawn AVI_fnc_test1;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
    class combo1: RscCombo
 {
@@ -478,7 +478,7 @@ onLoad = "_this spawn AVI_fnc_test2;";
 		class mklnlkmfs: RscButton
 		{
 			idc = 360057;
-			action = "closeDialog 0;";
+			action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 
 			text = "NAK Squad"; //--- ToDo: Localize;
 			x = 0.26375 * safezoneW + safezoneX;
@@ -500,7 +500,7 @@ onLoad = "_this spawn AVI_fnc_test2;";
 		class button_close: RscButton
 		{
 			idc = 17800;
-			action = "closeDialog 0;";
+			action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 
 			text = "X"; //--- ToDo: Localize;
 			x = 0.742812 * safezoneW + safezoneX;
@@ -747,7 +747,7 @@ onLoad = "_this spawn AVI_fnc_test3;";
 		class mklnlkmfs: RscButton
 		{
 			idc = 460057;
-			action = "closeDialog 0;";
+			action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 
 			text = "NAK Squad"; //--- ToDo: Localize;
 			x = 0.26375 * safezoneW + safezoneX;
@@ -779,7 +779,7 @@ onLoad = "_this spawn AVI_fnc_test3;";
 		class button_close: RscButton
 		{
 			idc = 67800;
-			action = "closeDialog 0;";
+			action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 
 			text = "X"; //--- ToDo: Localize;
 			x = 0.742812 * safezoneW + safezoneX;
@@ -1014,7 +1014,7 @@ onLoad = "_this spawn AVI_fnc_test4;";
 		class mklnlkmfs: RscButton
 		{
 			idc = 560057;
-			action = "closeDialog 0;";
+			action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 
 			text = "NAK Squad"; //--- ToDo: Localize;
 			x = 0.26375 * safezoneW + safezoneX;
@@ -1036,7 +1036,7 @@ onLoad = "_this spawn AVI_fnc_test4;";
 		class button_close: RscButton
 		{
 			idc = 97800;
-			action = "closeDialog 0;";
+			action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 
 			text = "X"; //--- ToDo: Localize;
 			x = 0.742812 * safezoneW + safezoneX;
@@ -1234,7 +1234,7 @@ onLoad = "_this spawn AVI_fnc_test5;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 		class PresetDestiny: RscText
 {
@@ -1267,7 +1267,7 @@ onLoad = "_this spawn AVI_fnc_test5;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
  class combo1: RscCombo
 {
@@ -1380,7 +1380,7 @@ onLoad = "_this spawn AVI_fnc_test6;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 		class PresetDestiny: RscText
@@ -1414,7 +1414,7 @@ onLoad = "_this spawn AVI_fnc_test6;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
 class combo1: RscCombo
 {
@@ -1570,7 +1570,7 @@ onLoad = "_this spawn AVI_fnc_test7;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 		class PresetDestiny: RscText
@@ -1604,7 +1604,7 @@ onLoad = "_this spawn AVI_fnc_test7;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
  class combo1: RscCombo
 {
@@ -1733,7 +1733,7 @@ onLoad = "_this spawn AVI_fnc_test8;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 		class PresetDestiny: RscText
@@ -1767,7 +1767,7 @@ onLoad = "_this spawn AVI_fnc_test8;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
  class combo1: RscCombo
 {
@@ -1896,7 +1896,7 @@ onLoad = "_this spawn AVI_fnc_test9;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click To Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 		class PresetDestiny: RscText
@@ -1930,7 +1930,7 @@ onLoad = "_this spawn AVI_fnc_test9;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
  class combo1: RscCombo
 {
@@ -2053,7 +2053,7 @@ onLoad = "_this spawn AVI_fnc_test10;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 		class PresetDestiny: RscText
@@ -2087,7 +2087,7 @@ onLoad = "_this spawn AVI_fnc_test10;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
  class combo1: RscCombo
 {
@@ -2228,7 +2228,7 @@ onLoad = "_this spawn AVI_fnc_test11;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 		class PresetDestiny: RscText
@@ -2262,7 +2262,7 @@ onLoad = "_this spawn AVI_fnc_test11;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
  class combo1: RscCombo
 {
@@ -2401,7 +2401,7 @@ onLoad = "_this spawn AVI_fnc_test12;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 		class PresetDestiny: RscText
@@ -2435,7 +2435,7 @@ onLoad = "_this spawn AVI_fnc_test12;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
  class combo1: RscCombo
 {
@@ -2594,7 +2594,7 @@ onLoad = "_this spawn AVI_fnc_test14;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 		class PresetDestiny: RscText
@@ -2628,7 +2628,7 @@ onLoad = "_this spawn AVI_fnc_test14;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
  class combo1: RscCombo
 {
@@ -2778,7 +2778,7 @@ class lesreglesdujeux
 			class txt_Rules: RscStructuredText
 {
 	idc = 1105543;
-	text = "<a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #01</a> NO Racism.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #02</a> No impersonating an admin.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #03</a> No intentional team killing.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #04</a> No griefing or harassment.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #05</a> No firing at base.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #06</a> No wasting server assets.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #07</a> No using voice in restricted channels, spamming, broadcasting music, use of any voice modulators or voice changers.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #08</a> Names used in TeamSpeak must match your in-game profile name.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #09</a> No playing as infantry while in the pilot slot.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #10</a> No arguing with the administration.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #11</a> No pilots, UAV operator, or ATC may play without being on the NAK Squad TeamSpeak server (excluding nak elite). No pilot may be afk. No players in the “pilots” channel may mute all communication, which includes being “away” in TeamSpeak.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #12</a> No users under 16 years of age.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #13</a> No verbal abuse.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #14</a> No use of language or profile names that are lewd, obscene, vulgar, discriminatory, hate speech, promoting violence, drug use or any illegal activity, promoting crimes against humanity, genocide or torture, or is otherwise objectionable.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #15</a> No recruiting.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #16</a> No posting of inappropriate or harmful links or content<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #17</a> No recording or streaming of teamspeak.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #18</a> No cheating or <a href='https://www.naksquad.net/mods'>unapproved mods.</a>	<br/><br/><t align='center'><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>COMPLETE SERVER RULES</a></t><br/><br/><t align='center'><a color='#f1d970' href='https://www.naksquad.net/mods/'>MODS (ALLOWED AND RESTRICTED)</a></t>";
+	text = "<a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #01</a> NO Racism.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #02</a> No impersonating an admin.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #03</a> No intentional team killing.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #04</a> No griefing or harassment.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #05</a> No firing at base.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #06</a> No wasting server assets.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #07</a> No using voice in restricted channels, spamming, broadcasting music, use of any voice modulators or voice changers.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #08</a> Names used in TeamSpeak must match your in-game profile name.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #09</a> No playing as infantry while in the pilot slot.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #10</a> No arguing with the administration.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #11</a> No pilots, UAV operator, or ATC may play without being on the NAK Squad TeamSpeak server (including nak elite). No pilot may be afk. No players in the “pilots” channel may mute all communication, which includes being “away” in TeamSpeak.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #12</a> No users under 16 years of age.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #13</a> No verbal abuse.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #14</a> No use of language or profile names that are lewd, obscene, vulgar, discriminatory, hate speech, promoting violence, drug use or any illegal activity, promoting crimes against humanity, genocide or torture, or is otherwise objectionable.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #15</a> No recruiting.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #16</a> No posting of inappropriate or harmful links or content<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #17</a> No recording or streaming of teamspeak.<br/><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>RULE #18</a> No cheating or <a href='https://www.naksquad.net/mods'>unapproved mods.</a>	<br/><br/><t align='center'><a color='#f1d970' href='https://www.naksquad.net/rules/server-rules/'>COMPLETE SERVER RULES</a></t><br/><br/><t align='center'><a color='#f1d970' href='https://www.naksquad.net/mods/'>MODS (ALLOWED AND RESTRICTED)</a></t>";
 	x = 0.335938 * safezoneW + safezoneX;
 	//y = 0.318 * safezoneH + safezoneY;
 	y = 0.278 * safezoneH + safezoneY;
@@ -2919,8 +2919,8 @@ class ProgressBar
 {
 name = "ProgressBar";
 idd = 3400;
-movingEnable = false;
-enableSimulation = false;
+movingEnable = 0;
+enableSimulation = 1;
 
 class controlsBackground {
 
@@ -2954,6 +2954,17 @@ class controlsBackground {
 		y = 0.074;
 		w = 0.6;
 		h = 0.05;
+	};
+
+	class cancel_repair: RscButton {
+		idc = 3403;
+		text = "Cancel Repair"; //--- ToDo: Localize;
+		x = 0.556719 * safezoneW + safezoneX;
+		y = 0.313 * safezoneH + safezoneY;
+		w = 0.0670312 * safezoneW;
+		h = 0.033 * safezoneH;
+		tooltip = "Cancel Repair Service"; //--- ToDo: Localize;
+		action = "missionNamespace setVariable ['cancelVehRepair', true]; hint 'Repair Service Canceled'";
 	};
 
 };
@@ -2993,7 +3004,7 @@ onLoad = "_this spawn AVI_fnc_test13;";
 	w = 0.091875 * safezoneW;
 	h = 0.028 * safezoneH;
 	 tooltip = "Click to Exit"; //--- ToDo: Localize;
-    action = "closeDialog 0;";
+    action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 };
 
 		class PresetDestiny: RscText
@@ -3027,7 +3038,7 @@ onLoad = "_this spawn AVI_fnc_test13;";
             w = 0.013125 * safezoneW;
             h = 0.028 * safezoneH;
             tooltip = "Click to Exit"; //--- ToDo: Localize;
-            action = "closeDialog 0;";
+            action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
         };
 
 class combo2: RscCombo
@@ -3146,7 +3157,7 @@ class dynamic_loadout007
 			w = 0.091875 * safezoneW;
 			h = 0.028 * safezoneH;
 			tooltip = "Click to Exit"; //--- ToDo: Localize;
-			action = "closeDialog 0;";
+			action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 		};
 
 		class PresetDestiny: RscText
@@ -3248,7 +3259,7 @@ class dynamic_loadout007
 			w = 0.013125 * safezoneW;
 			h = 0.028 * safezoneH;
 			tooltip = "Click to Exit"; //--- ToDo: Localize;
-			action = "closeDialog 0;";
+			action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 		};
 
 		class chooseyourdestiny: RscCombo
@@ -3671,7 +3682,7 @@ class dynamic_loadout008
 			w = 0.091875 * safezoneW;
 			h = 0.028 * safezoneH;
 			tooltip = "Click to Exit"; //--- ToDo: Localize;
-			action = "closeDialog 0;";
+			action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 		};
 
 		class PresetDestiny: RscText
@@ -3771,7 +3782,7 @@ class dynamic_loadout008
 			w = 0.013125 * safezoneW;
 			h = 0.028 * safezoneH;
 			tooltip = "Click to Exit"; //--- ToDo: Localize;
-			action = "closeDialog 0;";
+			action = "closeDialog 0; _this spawn AVI_fnc_clearCtrlEvent;";
 		};
 
 		class chooseyourdestiny: RscCombo
@@ -3785,7 +3796,7 @@ class dynamic_loadout008
 		};
 class combo_save: RscCombo
 {
-	idc = 2000001;
+	idc = 1000001;
 
 	x = 0.454062 * safezoneW + safezoneX;
 	y = 0.192 * safezoneH + safezoneY;
@@ -3795,7 +3806,7 @@ class combo_save: RscCombo
 };
 class combo_load: RscCombo
 {
-	idc = 2000002;
+	idc = 1000002;
 
 	x = 0.611562 * safezoneW + safezoneX;
 	y = 0.192 * safezoneH + safezoneY;

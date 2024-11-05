@@ -82,4 +82,4 @@ _units = (units _grp) + [leader _grp]; //The leader should also move randomly
         };
     };
        
-} forEach _units; // };
+} forEach _units;

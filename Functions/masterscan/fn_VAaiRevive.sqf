@@ -7,12 +7,12 @@ if ((missionNameSpace getVariable "isNakElite")) then {
 };
 
 if (vehicle player != player) exitWith {hint "Revive is Not Available While Inside a Vehicle"};
-_lock1 = missionNamespace getVariable "lock1";
+private _lock1 = missionNamespace getVariable "lock1";
 if (_lock1 == 1) exitWith {
 	playSound "AddItemFailed";
 	hint "AI Revive System is not Available, Please Wait For The System To Cool Down";
 };
-_lecallers = missionNamespace getVariable "themasterrankin";
+private _lecallers = missionNamespace getVariable "themasterrankin";
 if (isNil "_lecallers") then
 {
 	missionNamespace setVariable ["themasterrankin", 0]; 
@@ -25,22 +25,22 @@ if (_lecallers >= _AIREVIVEVAL) then
 		playSound "AddItemOK";
 		closeDialog 0; 
 
-			_leresult = _lecallers - _AIREVIVEVAL;
-		_therownerid = clientOwner;
+		private _leresult = _lecallers - _AIREVIVEVAL;
+		private _therownerid = clientOwner;
 		missionNamespace setVariable ["themasterrankin", _leresult, _therownerid];
 		
 		sleep 0.01; 
 
-		_playerpos = position player;
-		_id = clientOwner;
-		_position =[_playerpos, 50, 150, 3, 0, 20, 0] call BIS_fnc_findSafePos;
-		_legrp = createGroup west;
-		_theaireviver = _legrp createUnit ["C_IDAP_Man_Paramedic_01_F", _position, [], 0, "FORM"];
-		_waypoint = _legrp addWaypoint [_playerpos, 0];
+		private _playerpos = position player;
+		private _id = clientOwner;
+		private _position =[_playerpos, 50, 150, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+		private _legrp = createGroup west;
+		private _theaireviver = _legrp createUnit ["C_IDAP_Man_Paramedic_01_F", _position, [], 0, "FORM"];
+		private _waypoint = _legrp addWaypoint [_playerpos, 0];
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointCompletionRadius 0;
 
-		_yhecounter = 0;
+		private _yhecounter = 0;
 		while {true} do 
 		{
 			

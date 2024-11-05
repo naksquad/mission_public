@@ -1,5 +1,6 @@
 #include "..\..\DefinePrice.hpp"
-
+private ["_lock1","_lecallers","_roadrunner","_mastragraba","_leresult","_therownerid","_pos","_leboxtosend","_toBoxItems","_toBoxWeapons",
+"_toBoxMags","_toBoxBackPacks"];
 private _WEAPONCRATE = WEAPONCRATE;
 
 if ((missionNameSpace getVariable "isNakElite")) then {

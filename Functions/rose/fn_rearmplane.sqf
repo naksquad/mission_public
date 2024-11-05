@@ -2,33 +2,33 @@ private _veh = _this # 0;
 
 if (_veh isKindOf "ParachuteBase" || !alive _veh) exitWith {};
 
-if (!(_veh isKindOf "plane")) exitWith { 
-	_veh vehicleChat "This pad is for plane service only, soldier!"; 
+if (!(_veh isKindOf "plane")) exitWith {
+	_veh vehicleChat "This pad is for plane service only, soldier!";
 };
 
 _veh vehicleChat "Servicing airplane, this will take about 3 minutes";
 
 _veh setFuel 0;
 
-//---------- RE-ARMING
+// ---------- RE-ARMING
 
 sleep 10;
 
 _veh vehicleChat "Re-arming ...";
 
-//---------- REPAIRING
+// ---------- REPAIRING
 
 sleep 10;
 
 _veh vehicleChat "Repairing ...";
 
-//---------- REFUELING
+// ---------- REFUELING
 
 sleep 10;
 
 _veh vehicleChat "Refueling ...";
 
-//---------- FINISHED
+// ---------- FINISHED
 
 sleep 20;
 

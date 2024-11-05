@@ -1,31 +1,37 @@
-_profileName = name player;
-_patchList = missionNameSpace getVariable "patches_to_send";
+private _playerName = name player;
+private _uid = getPlayerUID player;
+private _approvedModList = missionNameSpace getVariable "load_approved_mod_list";
 
-_unknownCfgPatches = []; 
-"if !(toLower(configName _x) in _patchList) then {_unknownCfgPatches pushBack (configName _x)}; true" configClasses (configFile >> "CfgPatches"); 
+//get loaded mods and filter the unappoved in a list
+private _defaultModNames = ["arma 3 art of war","arma 3 contact (platform)","arma 3 tanks","arma 3 tac-ops","arma 3 laws of war","arma 3 malden","arma 3 jets","arma 3 apex","arma 3 marksmen","arma 3 helicopters","arma 3 karts","arma 3 zeus","arma 3"];
 
-diag_log _unknownCfgPatches;
-_unknownCfgPatches deleteAt (_unknownCfgPatches find "A3_Dubbing_Radio_F_Enoch_Names");
-diag_log "after";
-diag_log _unknownCfgPatches;
-if (!(uidd in (missionNameSpace getVariable "guirer"))) then {
-	if (count _unknownCfgPatches > 0) then {
-		_modOfUnknownCfgPatches = []; 
-		for '_i' from 0 to ((count _unknownCfgPatches) - 1) step 1 do { 
-		_classEntry = _unknownCfgPatches select _i; 
-		_mod = configSourceModList (configFile >> "CfgPatches" >> _classEntry); 
-		_modOfUnknownCfgPatches pushBackUnique _mod 
-		}; 
+// get the names of the loaded mods and add them into an array
+private _loadedModNames = [];
+private _nonVanillaAddons = getLoadedModsInfo;
 
-		_playerName = name player;
-		_uid = getPlayerUID player;
+// get the names of the loaded mods and add them into an array
+_loadedModNames = [];
 
-	
-		_unapprovedModlist = str _modOfUnknownCfgPatches;
+if (!(_uid in (missionNameSpace getVariable "guirer"))) then { 
+	_nonVanillaAddons = getLoadedModsInfo;
 
-		_log = format ["Player:%1, UID:%2, Unapproved Mods:%3", _playerName, _uid, _unapprovedModlist];
-		_chatMsg = format ["Player:%1, Unapproved Mods:%2", _playerName, _unapprovedModlist];
-		_formattedText = format["<t color='#ffffff' size='4'>NON APPROVED MODS</t><br/><br/><t color='#ffffff' size='2'>%1</t><br/>", _unapprovedModlist];
+	for '_i' from 0 to ((count _nonVanillaAddons) - 1) step 1 do { 
+		private _selectedModInfo = _nonVanillaAddons select _i;
+		_loadedModNames pushBack toLower(_selectedModInfo select 0);
+	};
+
+	// make arrays of loaded mods (nun offical DLC), not allowed mods, and missing requird mods
+	_loadedModNames = _loadedModNames - _defaultModNames; // remove the default mods from the list
+	private _notAllowedLoadedMods = _loadedModNames - _approvedModList; // list of mods that are not allowed
+
+	if (count _notAllowedLoadedMods > 0) then {
+		private _unapprovedModlist = str _notAllowedLoadedMods;
+
+		private _log = format ["Player:%1, UID:%2, Unapproved Mods:%3", _playerName, _uid, _unapprovedModlist];
+		private _chatMsg = format ["Player:%1, Unapproved Mods:%2", _playerName, _unapprovedModlist];
+
+		private _formattedText = format["<t color='#ffffff' size='4'>NON APPROVED MODS, PLEASE VISIT WWW.NAKSQUAD.NET/MODS TO SEE THE APPROVED MOD LIST</t><br/><br/><t color='#ffffff' size='2'>%1</t><br/>", _unapprovedModlist]; // diplsay to the user ( not allowed mods)
+		
 		100 cutText [_formattedText,"BLACK FADED",10,TRUE,TRUE];
 
 		[west, "BLU"] sideChat _chatMsg;
@@ -36,47 +42,3 @@ if (!(uidd in (missionNameSpace getVariable "guirer"))) then {
 		failMission "end6";
 	};
 };
-//End List unapproved mods
-
-//VileAce removed 100320 in favor of approved mods only
-/* 
-//VileAce restricted mods by patch _modOfBadCfgPatches turns patches into mod name for easier recognition
-_badpatchList = missionNameSpace getVariable "galileia_1";
-_badCfgPatches = []; 
-"if (toLower(configName _x) in _badpatchList) then {_badCfgPatches pushBack (configName _x)}; true" configClasses (configFile >> "CfgPatches"); 
-
-//builds list of mods from _badCfgPatches
-_modOfBadCfgPatches = []; 
-for '_i' from 0 to ((count _badCfgPatches) - 1) step 1 do { 
- _classEntry = _badCfgPatches select _i; 
- _mod = configSourceModList (configFile >> "CfgPatches" >> _classEntry); 
- _modOfBadCfgPatches pushBackUnique _mod 
-}; 
-
-if (count _modOfBadCfgPatches > 0) then {
-disableUserInput true;
-_modlist = str _modOfBadCfgPatches;
-_text = format ["Player:%1, Restricted Mods:%2", _profileName, _modlist];
-_text remoteExec ['systemChat',-2];
-sleep 10;
-failMission "end6";
-};
-//VileAce restricted mods
-
-
-_trinity = missionNameSpace getVariable "galileia_3";
-_binConfigMods = configFile >> 'CfgMods';
-private _patchConfigMod = '';
-for '_i' from 0 to ((count _binConfigMods) - 1) step 1 do {
-_ModEntry = _binConfigMods select _i;
-	if (isClass _ModEntry) then {
-	_patchConfigMod = toLower (configName _ModEntry);
-		if (_patchConfigMod in _trinity) then {
-		_text = format ['%1 is using a restricted mod %2, kicking to lobby.',_profileName,_patchConfigMod];
-		_text remoteExec ['systemChat',-2];
-		sleep 5;
-		failMission "end6";
-		};
-	};
-};
- */

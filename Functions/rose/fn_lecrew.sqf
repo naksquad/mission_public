@@ -21,9 +21,8 @@ if (isnil "showVehCrew") then {
   	 _ui = uiNameSpace getVariable "HudNames";
 	 _HudNames = _ui displayCtrl 99999;
 
-    _lesnondesjouer = missionNamespace getVariable "lesnondesjouer";
-    if(_lesnondesjouer == 1) exitWith {diag_log format ["_lesnondesjouer on sors le number = %1", _lesnondesjouer];};
-    diag_log format ["_lesnondesjouer ou dehors tourne = %1", _lesnondesjouer];
+	 private _lesnondesjouer = missionNamespace getVariable "lesnondesjouer";
+    if(_lesnondesjouer == 1) exitWith {};
     if ( getoutcheck == 0) then {
         if ( (lifeState player) == "INCAPACITATED" ) then  { 
             if (!((vehicle player) isKindOf "Ship")) then {
@@ -38,7 +37,7 @@ if (isnil "showVehCrew") then {
 	   if (player != vehicle player) then
 	   {
 		   _name = "";
-		   _vehicleID = "";
+		   private  _vehicleID = "";
 		   _picture = ""; 
 		   _vehicle = assignedVehicle player;
 		   _vehname= getText (configFile >> "CfgVehicles" >> (typeOf vehicle player) >> "DisplayName");
@@ -94,5 +93,5 @@ if (isnil "showVehCrew") then {
 
 		};
 	};
-   sleep 3;
+   sleep 5;
  }; 

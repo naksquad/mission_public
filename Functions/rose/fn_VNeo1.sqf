@@ -60,10 +60,6 @@ switch (_TheGodPhase2) do {
     case "2000": {missionNamespace setVariable ["LAltitude", 2000];};
     case "2500": {missionNamespace setVariable ["LAltitude", 2500];};
     case "3000": {missionNamespace setVariable ["LAltitude", 3000];};
-   
-
-    
-
 };
 
 

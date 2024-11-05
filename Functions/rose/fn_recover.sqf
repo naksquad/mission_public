@@ -32,10 +32,9 @@ _actID = _this # 2;  		// ID of the Action
 
 //-------------------- Send hint to player that he's done something...
 
-//[[player,"AinvPercMstpSrasWrflDnon_Putdown_AmovPercMstpSrasWrflDnon"],"AW_fnc_switchMoveMP",nil,false] spawn BIS_fnc_MP;
-_theunitca = _this # 1;
+private _theunitca = _this # 1;
 
-_uidr = getPlayerUID _theunitca;
+private _uidr = getPlayerUID _theunitca;
 
 hint "Receiving data...";
 

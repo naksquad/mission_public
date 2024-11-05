@@ -9,13 +9,10 @@ _index = _ctrl # 1;
 
 ((uiNamespace getVariable "ledisplaysav007") displayCtrl 1008) ctrlSetStructuredText parseText format ["<t color='#ffc600'>%1</t>", _index];
 
-diag_log format ["_ctrl %1, _index %2", _ctrl,_index];
 
 _la_voiture = missionNamespace getVariable "theskcpveh";
 
 missionNamespace setVariable ["lacouleur4", _index];
-
-//_atrapelacoleur = missionNamespace getVariable "lacouleur4";
 
 if (isEngineOn _la_voiture) exitWith {hint parseText _tooLow};
 
@@ -292,20 +289,18 @@ _golden = [
 
 
 
-_la_couleur = "#(rgb,8,8,3)color(" + _lacouleur1 + "," + _lacouleur2 + "," + _lacouleur3 + "," + _lacouleur4 + ")";
+private _la_couleur = "#(rgb,8,8,3)color(" + _lacouleur1 + "," + _lacouleur2 + "," + _lacouleur3 + "," + _lacouleur4 + ")";
 
 _lestextures = getObjectTextures (vehicle player);
 _cnt = count _lestextures;
 
 ((uiNamespace getVariable "ledisplaysav007") displayCtrl 1200) ctrlSetText _la_couleur;
 
-diag_log format ["_la_voiture %1", _la_voiture];
 _num = _vialace findIf {_x isEqualTo (typeof _la_voiture)};
 
-diag_log format ["_num %1", _num];
+
 if !(_num == -1) then {
 	_lenumb =  _golden select _num;
-	diag_log format ["_lenumb%1", _lenumb];
 	if !(isEngineOn _la_voiture) then {
 		{
 			

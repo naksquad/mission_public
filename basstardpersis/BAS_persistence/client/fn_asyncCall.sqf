@@ -11,6 +11,8 @@
         3: BOOL (True to return a single array, false to return multiple entries mainly for garage).
 */
 
+if (!isServer && {!hasInterface}) exitWith{};
+
 private["_queryStmt","_mode","_multiarr","_queryResult","_key","_return","_loop"];
 _queryStmt = [_this,0,"",[""]] call BIS_fnc_param;
 _mode = [_this,1,1,[0]] call BIS_fnc_param;

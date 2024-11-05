@@ -1,10 +1,10 @@
-_target = _this # 0;
-_gear = [];
-_headgear = headgear _target;
-_back_pack = backpack _target;
-_back_pack_items = getItemCargo (unitBackpack _target);
-_back_pack_weap = getWeaponCargo (unitBackpack _target);
-_back_pack_maga = getMagazineCargo (unitBackpack _target);
+private _target = _this # 0;
+private _gear = [];
+private _headgear = headgear _target;
+private _back_pack = backpack _target;
+private _back_pack_items = getItemCargo (unitBackpack _target);
+private _back_pack_weap = getWeaponCargo (unitBackpack _target);
+private _back_pack_maga = getMagazineCargo (unitBackpack _target);
 
 
 _gear =

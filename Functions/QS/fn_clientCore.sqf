@@ -12,7 +12,7 @@ Description:
 
 	Client Core
 ________________________________________________/*/
-private ['_timeNow','_serverTime','_QS_uiTime','_QS_player','_QS_clientOwner','_cursorTarget','_cursorDistance','_cursorTargetDistance','_objectParent','_QS_objectTypes','_QS_objectRange','_cursorObject','_cursorObjectDistance','_noObjectParent','_QS_v2Type','_QS_v2TypeL','_QS_v2','_QS_action_turretSafety','_QS_action_turretSafety_text','_QS_action_turretSafety_array','_QS_interaction_turretSafety','_QS_turretSafety_heliTypes','_QS_posWorldPlayer','_posATLPlayer','_QS_module_revealPlayers','_QS_module_revealPlayers_delay','_QS_module_revealPlayers_checkDelay','_true','_false','_lifeState','_QS_nearEntities_revealDelay','_QS_nearEntities_revealCheckDelay'];
+private ['_puid', '_namePlayer', '_timeNow','_serverTime','_QS_uiTime','_QS_player','_QS_clientOwner','_cursorTarget','_cursorDistance','_cursorTargetDistance','_objectParent','_QS_objectTypes','_QS_objectRange','_cursorObject','_cursorObjectDistance','_noObjectParent','_QS_v2Type','_QS_v2TypeL','_QS_v2','_QS_action_turretSafety','_QS_action_turretSafety_text','_QS_action_turretSafety_array','_QS_interaction_turretSafety','_QS_turretSafety_heliTypes','_QS_posWorldPlayer','_posATLPlayer','_QS_module_revealPlayers','_QS_module_revealPlayers_delay','_QS_module_revealPlayers_checkDelay','_true','_false','_lifeState','_QS_nearEntities_revealDelay','_QS_nearEntities_revealCheckDelay'];
 
 disableSerialization;
 _timeNow = time;

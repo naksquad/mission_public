@@ -1,15 +1,14 @@
 #include "..\DefinePrice.hpp"
 
-_dispay = _this # 0;
+private _dispay = _this # 0;
 disableSerialization;
 private _now = date;
 private _hour = _now select 3;
 private _min = _now select 4;
 
 private _daytime = dayTime;
-_strTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
+private _strTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
 (_dispay displayCtrl 100011) ctrlSetStructuredText parseText format ["<t color='#0b6bbf'>%1</t>", _strTime];
-// (_dispay displayCtrl 100011) ctrlSetStructuredText parseText format ["<t color='#0b6bbf'>%1:%2</t>", _hour, _min];
 
 (_dispay displayCtrl 1101) ctrlSetStructuredText parseText "
 <t size= '1.3' align='center' underline='true' href='https// www.naksquad.net/nak-server-rules/' color='#fce253' >Server Rules</t>
@@ -24,7 +23,7 @@ _strTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
 <a color='#f1d970' href='https// www.naksquad.net/rules/server-rules/'>RULE #08</a> Names used in TeamSpeak must match your in-game profile name.<br/>
 <a color='#f1d970' href='https// www.naksquad.net/rules/server-rules/'>RULE #09</a> No playing as infantry while in the pilot slot.<br/>
 <a color='#f1d970' href='https// www.naksquad.net/rules/server-rules/'>RULE #10</a> No arguing with the administration.<br/>
-<a color='#f1d970' href='https// www.naksquad.net/rules/server-rules/'>RULE #11</a> No pilots, UAV operator, or ATC may play without being on the NAK Squad TeamSpeak server (excluding nak elite). No pilot may be afk. No players in the “pilots” channel may mute all communication, which includes being “away” in TeamSpeak.<br/>
+<a color='#f1d970' href='https// www.naksquad.net/rules/server-rules/'>RULE #11</a> No pilots, UAV operator, or ATC may play without being on the NAK Squad TeamSpeak server (including nak elite). No pilot may be afk. No players in the “pilots” channel may mute all communication, which includes being “away” in TeamSpeak.<br/>
 <a color='#f1d970' href='https// www.naksquad.net/rules/server-rules/'>RULE #12</a> No users under 16 years of age.<br/>
 <a color='#f1d970' href='https// www.naksquad.net/rules/server-rules/'>RULE #13</a> No verbal abuse.<br/>
 <a color='#f1d970' href='https// www.naksquad.net/rules/server-rules/'>RULE #14</a> No use of language or profile names that are lewd, obscene, vulgar, discriminatory, hate speech, promoting violence, drug use or any illegal activity, promoting crimes against humanity, genocide or torture, or is otherwise objectionable.<br/>

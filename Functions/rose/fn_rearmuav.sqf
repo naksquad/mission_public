@@ -1,32 +1,32 @@
 private _veh = _this # 0;
 
-if (isPlayer _veh) exitWith { 
-	_veh vehicleChat "This pad is for UAV service only, soldier!"; 
+if (isPlayer _veh) exitWith {
+	_veh vehicleChat "This pad is for UAV service only, soldier!";
 };
 
 _veh vehicleChat "Servicing UAV, please wait ...";
 
 _veh setFuel 0;
 
-//---------- RE-ARMING
+// ---------- RE-ARMING
 
 sleep 10;
 
 _veh vehicleChat "Re-arming ...";
 
-//---------- REPAIRING
+// ---------- REPAIRING
 
 sleep 10;
 
 _veh vehicleChat "Repairing ...";
 
-//---------- REFUELING
+// ---------- REFUELING
 
 sleep 10;
 
 _veh vehicleChat "Refueling ...";
 
-//---------- FINISHED
+// ---------- FINISHED
 
 sleep 10;
 

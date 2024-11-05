@@ -1,5 +1,5 @@
 //test.sqf enemy a10
-private ["_thecounter","_theindexCounter","_claws","_pylonNameARR","_pylonDescAAR","_pylonName","_pylonDesc","_chooseyourdestiny","_display","_combo1","_combo2","_combo3","_combo4","_combo5","_combo6","_combo7","_combo8","_combo9","_combo10","_combo11"];
+private ["_index","_thecounter","_theindexCounter","_claws","_pylonNameARR","_pylonDescAAR","_pylonName","_pylonDesc","_chooseyourdestiny","_display","_combo1","_combo2","_combo3","_combo4","_combo5","_combo6","_combo7","_combo8","_combo9","_combo10","_combo11"];
 
 disableSerialization;
 
@@ -17,6 +17,8 @@ _combo10 = 3010;
 _chooseyourdestiny = 202300;
 //store display, passed from onLoad
 _display = _this # 0;
+
+[] call AVI_fnc_clearCtrlEvent;
 
 //combo 1
 _claws = "O_Plane_CAS_02_dynamicLoadout_F" getCompatiblePylonMagazines 1;
@@ -233,6 +235,21 @@ _index = lbAdd [1000002, _x];
 (_display displayCtrl _combo10) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_scriptName1"];
 (_display displayCtrl _chooseyourdestiny) ctrlAddEventHandler ["LBSelChanged","_this call AVIP_fnc_Oshikr_aolf_i_trust"];
 
-//(_display displayCtrl _combo10)  ctrlAddEventHandler ["LBSelChanged","[_this select 0, _this select 1] execVM 'scriptNameclear;"];
 (_display displayCtrl 1000001) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName1"];
 (_display displayCtrl 1000002) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName1"];
+
+missionNamespace setVariable ["listboxCtrlEhLit", [
+	(_display displayCtrl _combo1),
+	(_display displayCtrl _combo2),
+	(_display displayCtrl _combo3),
+	(_display displayCtrl _combo4),
+	(_display displayCtrl _combo5),
+	(_display displayCtrl _combo6),
+	(_display displayCtrl _combo7),
+	(_display displayCtrl _combo8),
+	(_display displayCtrl _combo9),
+	(_display displayCtrl _combo10),
+	(_display displayCtrl _chooseyourdestiny),
+	(_display displayCtrl 1000001),
+	(_display displayCtrl 1000002)
+]];

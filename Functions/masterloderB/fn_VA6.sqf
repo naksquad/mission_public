@@ -20,17 +20,17 @@ if ((missionNameSpace getVariable "isNakElite")) then {
 	_DNIGHTSUPPLIESCRATE = DNIGHTSUPPLIESCRATEELT;
 };
 
-_dispay = _this # 0;
+private _dispay = _this # 0;
 disableSerialization;
 private _now = date;
 private _hour = _now select 3;
 private _min = _now select 4;
 
 private _daytime = dayTime;
-_strTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
+private _strTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
 (_dispay displayCtrl 100011) ctrlSetStructuredText parseText format ["<t color='#0b6bbf'>%1</t>", _strTime];
 
-_themasterrankin = missionNamespace getVariable "themasterrankin";
+private _themasterrankin = missionNamespace getVariable "themasterrankin";
 if (isNil "_themasterrankin") then {
 	missionNamespace setVariable ["themasterrankin", 0];
 	_themasterrankin = 0;

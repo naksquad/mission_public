@@ -10,8 +10,8 @@ private ["_position","_cut","_dialog","_s_alt","_s_alt_text","_sound","_sound2",
 waitUntil { !isNull player };
 
 _position = GetPos player;
-_z = _position select 2;
-_ledepacement = missionNameSpace getVariable "ledepacement";
+private _z = _position select 2;
+private _ledepacement = missionNameSpace getVariable "ledepacement";
 if (_ledepacement == 1) exitwith {
 	systemChat "Halo Jump Not Available While Holding an Object.";
 	breakOut "main";
@@ -27,7 +27,7 @@ if (!visibleMap) exitwith {
 	systemChat "Halo jump canceled.";
 	breakOut "main";
 };
-_pos = ATM_Jump_clickpos;
+private _pos = ATM_Jump_clickpos;
 ATM_Jump_mapclick = if(true) then{
 	call compile format ['
 		mkr_halo = createmarker ["mkr_halo", ATM_Jump_Clickpos];
@@ -36,14 +36,14 @@ ATM_Jump_mapclick = if(true) then{
 		"mkr_halo" setMarkerTextLocal "Jump";'];
 };
 
-_target = player;
+private _target = player;
 
 
-_loadout=[_target] call ATM_fnc_Getloadout;
+private _loadout=[_target] call ATM_fnc_Getloadout;
 
-_posJump = getMarkerPos "mkr_halo";
-_x = _posJump select 0;
-_y = _posJump select 1;
+private _posJump = getMarkerPos "mkr_halo";
+private _x = _posJump select 0;
+private _y = _posJump select 1;
 _z = _posJump select 2;
 _target setPos [_x,_y,_z+(missionNameSpace getVariable "LAltitude")];
 
@@ -61,7 +61,7 @@ if ((getPos _target select 2) >= 8000) then{
 	sleep 0.5;
 };
 
-_thecounter = 0;
+private _thecounter = 0;
 
 while {(getPos _target select 2) > 2} do {
 	

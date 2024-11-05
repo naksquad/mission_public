@@ -1,17 +1,17 @@
 //Adjusted colors to single decimal
-_dispay = _this # 0;
+private _dispay = _this # 0;
 disableSerialization;
 private _now = date; 
 private _hour = _now select 3;
 private _min  = _now select 4;
 private _daytime = daytime;
-_strTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
+private _strTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
 
-_combobraker1 = 9001;
-_combobraker2 = 9002;
-_combobraker3 = 9003;
+private _combobraker1 = 9001;
+private _combobraker2 = 9002;
+private _combobraker3 = 9003;
 
-_themasterrankin = missionNamespace getVariable "themasterrankin";
+private _themasterrankin = missionNamespace getVariable "themasterrankin";
 if (isNil "_themasterrankin") then
 {
 	missionNamespace setVariable ["themasterrankin", 0]; 
@@ -22,9 +22,15 @@ sliderSetPosition [1900, (missionNameSpace getVariable "lesniperpour1")];
 sliderSetPosition [1901, (missionNameSpace getVariable "lesniperpour")];
 sliderSetPosition [91113, (missionNameSpace getVariable "hexdistance")];
 
+sliderSetPosition [191113, (missionNameSpace getVariable "setTIParameterStart")];
+sliderSetPosition [291113, (missionNameSpace getVariable "setTIParameterWidth")];
+
 (_dispay displayCtrl 91110) ctrlSetStructuredText parseText format ["<t color='#ffc600'>%1</t>", parseNumber ((missionNameSpace getVariable "lesniperpour1") toFixed 1)];
 (_dispay displayCtrl 91111) ctrlSetStructuredText parseText format ["<t color='#ffc600'>%1</t>", parseNumber ((missionNameSpace getVariable "lesniperpour") toFixed 1)];
 (_dispay displayCtrl 91114) ctrlSetStructuredText parseText format ["<t color='#ffc600'>%1</t>", parseNumber ((missionNameSpace getVariable "hexdistance") toFixed 0)];
+
+(_dispay displayCtrl 191114) ctrlSetStructuredText parseText format ["<t color='#ffc600'>%1</t>", (missionNameSpace getVariable "setTIParameterStart")];
+(_dispay displayCtrl 291114) ctrlSetStructuredText parseText format ["<t color='#ffc600'>%1</t>", (missionNameSpace getVariable "setTIParameterWidth")];
 
 uiNamespace setVariable ["ledisplaysav", _dispay]; 
 
@@ -34,7 +40,7 @@ uiNamespace setVariable ["ledisplaysav", _dispay];
 (_dispay displayCtrl 1997) ctrlSetStructuredText parseText format ["<t color='#ffc600'>Current Balance</t><t color='#0b6bbf'> $%1</t>", _themasterrankin];
 (_dispay displayCtrl 15111) ctrlSetStructuredText parseText "<img size='4.0' image='a3\ui_f\data\igui\cfg\cursors\select_ca.paa'/>";
 {
-_index = lbAdd [_combobraker1, _x];
+	private _index = lbAdd [_combobraker1, _x];
 } forEach  ["Red","Dark Red","Pink","Deep Pink","Orange Red","Dark Orange","Orange","Gold","Yellow","Violet","Magenta","Dark Violet","Purple","Indigo","Lime","Forest Green","Green","Yellow Green","Khaki","Dark Khaki","Olive Drab","Olive","Dark Olive Green","Dark Sea Green","Light Sea Green","Teal","Cyan","Light Cyan","Turquoise","Steel Blue","Light Blue","Royal Blue","Blue","Dark Blue","Tan","Golden Rod","Sienna","Maroon","White","Beige","Light Gray","Gray","Dark Gray"];
 
 lbSetColor [_combobraker1, 0 , [1,0,0,1]]; //Red
@@ -81,7 +87,7 @@ lbSetColor [_combobraker1, 40, [0.83,0.83,0.83,1]]; //LIGHTGRAY
 lbSetColor [_combobraker1, 41, [0.5,0.5,0.5,1]]; //GRAY
 lbSetColor [_combobraker1, 42, [0.2,0.2,0.2,1]]; //DarkGray
 {
-_index = lbAdd [_combobraker2, _x];
+	private _index = lbAdd [_combobraker2, _x];
 } forEach  ["Red","Dark Red","Pink","Deep Pink","Orange Red","Dark Orange","Orange","Gold","Yellow","Violet","Magenta","Dark Violet","Purple","Indigo","Lime","Forest Green","Green","Yellow Green","Khaki","Dark Khaki","Olive Drab","Olive","Dark Olive Green","Dark Sea Green","Light Sea Green","Teal","Cyan","Light Cyan","Turquoise","Steel Blue","Light Blue","Royal Blue","Blue","Dark Blue","Tan","Golden Rod","Sienna","Maroon","White","Beige","Light Gray","Gray","Dark Gray"];
 lbSetColor [_combobraker2, 0 , [1,0,0,1]]; //Red
 lbSetColor [_combobraker2, 1 , [0.55,0,0,1]]; //Dark Red
@@ -127,10 +133,12 @@ lbSetColor [_combobraker2, 40, [0.83,0.83,0.83,1]]; //LIGHTGRAY
 lbSetColor [_combobraker2, 41, [0.5,0.5,0.5,1]]; //GRAY
 lbSetColor [_combobraker2, 42, [0.2,0.2,0.2,1]]; //DARKGRAY
 {
-_index = lbAdd [_combobraker3, _x];
+	private _index = lbAdd [_combobraker3, _x];
 } forEach  ["500","600","700","800","900","1000","1200","1400","1600","2000","2500","3000"];
 sliderSetRange [1900, 0, 10];
 sliderSetRange [1901, 0, 1];
+sliderSetRange [191113, 0, 1];
+sliderSetRange [291113, 0, 1];
 sliderSetRange [91113, 1000, 50000];
 switch (str (missionNamespace getVariable "NAK_iconColor")) do {
 	case "[1,0,0]": { lbSetCurSel [_combobraker1, 0]; (_dispay displayCtrl 15111) ctrlSetStructuredText parseText "<img size='4.0' color='#FF0000' image='a3\ui_f\data\igui\cfg\cursors\select_ca.paa'/>"; };
@@ -237,6 +245,10 @@ switch (str (missionNamespace getVariable "LAltitude")) do {
 	case "2500": { lbSetCurSel [_combobraker3, 10]; };
 	case "3000": { lbSetCurSel [_combobraker3, 11]; };
 };
+
+(_dispay displayCtrl _combobraker1) ctrlRemoveAllEventHandlers "LBSelChanged";
+(_dispay displayCtrl _combobraker2) ctrlRemoveAllEventHandlers "LBSelChanged";
+(_dispay displayCtrl _combobraker3) ctrlRemoveAllEventHandlers "LBSelChanged";
 
 (_dispay displayCtrl _combobraker1)  ctrlAddEventHandler ["LBSelChanged","_this spawn ROSE_fnc_VNeo1"];
 (_dispay displayCtrl _combobraker2)  ctrlAddEventHandler ["LBSelChanged","_this spawn ROSE_fnc_VNeo2"];

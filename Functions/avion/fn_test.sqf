@@ -14,6 +14,8 @@ _combo11 = 2011;
 _chooseyourdestiny = 602300;
 _display = _this # 0;
 
+[] call AVI_fnc_clearCtrlEvent;
+
 
 //combo 1
 _claws = "B_Plane_CAS_01_dynamicLoadout_F" getCompatiblePylonMagazines 1;
@@ -234,7 +236,23 @@ _index = lbAdd [1000002, _x];
 (_display displayCtrl _combo10) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_scriptName"];
 (_display displayCtrl _combo11) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_scriptName"];
 (_display displayCtrl _chooseyourdestiny) ctrlAddEventHandler ["LBSelChanged","_this call AVIP_fnc_a10aolf_i_trust"];
-//(_display displayCtrl _combo10)  ctrlAddEventHandler ["LBSelChanged","[_this select 0, _this select 1] execVM 'scriptNameclear;"];
 
 (_display displayCtrl 1000001) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName"];
 (_display displayCtrl 1000002) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName"];
+
+missionNamespace setVariable ["listboxCtrlEhLit", [
+	(_display displayCtrl _combo1),
+	(_display displayCtrl _combo2),
+	(_display displayCtrl _combo3),
+	(_display displayCtrl _combo4),
+	(_display displayCtrl _combo5),
+	(_display displayCtrl _combo6),
+	(_display displayCtrl _combo7),
+	(_display displayCtrl _combo8),
+	(_display displayCtrl _combo9),
+	(_display displayCtrl _combo10),
+	(_display displayCtrl _combo11),
+	(_display displayCtrl _chooseyourdestiny),
+	(_display displayCtrl 1000001),
+	(_display displayCtrl 1000002)
+]];

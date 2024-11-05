@@ -1,5 +1,5 @@
 
-_units = _this # 0;
+private _units = _this # 0;
 
 if (!(isNil "BIS_fakeTexture")) exitWith {"IFF cannot be initialized more than once." call BIS_fnc_error; false};
 

@@ -41,12 +41,12 @@ respawnOnStart = 0;
 //------------------------- Garbage collector
 
 corpseManagerMode = 1; //Type of removed bodies: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable 
-corpseLimit = 5; //Max number of bodies which can be available at the same time. When exceeded, start deleting immediately. 
+corpseLimit = 1; //Max number of bodies which can be available at the same time. When exceeded, start deleting immediately. 
 corpseRemovalMinTime = 120; //Minimal time in seconds a body stays in the scene (can't be removed sooner). 
 corpseRemovalMaxTime = 200; //Maximal time in seconds after which a dead body is removed (can't stay longer) 
 
 wreckManagerMode = 1; //Type of removed wrecks: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable 
-wreckLimit = 3; //Max number of wrecks which can be available at the same time. When exceeded, start deleting immediately. 
+wreckLimit = 1; //Max number of wrecks which can be available at the same time. When exceeded, start deleting immediately. 
 wreckRemovalMinTime = 60; //Minimal time in seconds a wreck stays in the scene (can't be removed sooner). 
 wreckRemovalMaxTime = 160; //Maximal time in seconds after which a wreck is removed (can't stay longer)
 
@@ -184,7 +184,7 @@ class RscTitles {
 
 	class Params
 	{	
-	#include "\a3\Functions_F\Params\paramRevive.hpp"
+		#include "\a3\Functions_F\Params\paramRevive.hpp"
 	};
 class CfgDebriefing
 {
@@ -215,9 +215,5 @@ class CfgDebriefing
 		picture = "";
 		pictureColor[] = {0.0,0.0,0.0,1};
 	};
-};
-
-class Extended_PreInit_EventHandlers {
-	VCM_CBASettings = call compile preprocessFileLineNumbers "Vcom\Functions\VCM_CBASettings.sqf";
 };
 

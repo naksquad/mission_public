@@ -9,7 +9,7 @@ Description:
 	Curator KeyDown Event
 __________________________________________________*/
 
-_key = _this select 1;
+private _key = _this select 1;
 private _c = FALSE;
 if (_key isEqualTo 61) then {
 	if (_this select 2) then {

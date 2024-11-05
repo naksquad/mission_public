@@ -1,4 +1,4 @@
-private ["_lastMai","_display","_combo1","_combo2","_combo3","_combo4","_combo5","_combo6","_combo7","_combo8","_combo9","_combo10","_combo11"];
+private ["_index", "_pylonName", "_pylonDesc", "_lastMai","_display","_combo1","_combo2","_combo3","_combo4","_combo5","_combo6","_combo7","_combo8","_combo9","_combo10","_combo11"];
 
 disableSerialization;
 
@@ -12,16 +12,13 @@ _combo7 = 7000007;
 
 _display = _this # 0;
 
-
-
-
-
+[] call AVI_fnc_clearCtrlEvent;
 
 //combo 1
-_claws = "I_Plane_Fighter_03_dynamicLoadout_F" getCompatiblePylonMagazines 1;
-_pylonNameARR = [];
-_pylonDescAAR = [];
-_thecounter = 0;
+private _claws = "I_Plane_Fighter_03_dynamicLoadout_F" getCompatiblePylonMagazines 1;
+private _pylonNameARR = [];
+private _pylonDescAAR = [];
+private _thecounter = 0;
 {
 	_pylonName =  getText (configfile >> "CfgMagazines" >> _x >> "displayName");
 	_pylonNameARR pushBack _pylonName;
@@ -168,3 +165,15 @@ _index = lbAdd [1000002, _x];
 
 (_display displayCtrl 1000001) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName01"];
 (_display displayCtrl 1000002) ctrlAddEventHandler ["LBSelChanged","_this call AVI_fnc_lscriptName01"];
+
+missionNamespace setVariable ["listboxCtrlEhLit", [
+	(_display displayCtrl _combo1),
+	(_display displayCtrl _combo2),
+	(_display displayCtrl _combo3),
+	(_display displayCtrl _combo4),
+	(_display displayCtrl _combo5),
+	(_display displayCtrl _combo6),
+	(_display displayCtrl _combo7),
+	(_display displayCtrl 1000001),
+	(_display displayCtrl 1000002)
+]];

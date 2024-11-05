@@ -37,8 +37,4 @@ _pylons = missionNamespace getVariable "pilotGunnergrey";
 { _v setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex] } forEach _pylons;
 
 
-//_pilotGunnergrey = ["",""];
-//missionNamespace setVariable ["pilotGunnergrey", _pilotGunnergrey];
-//[_v,_pylons] remoteExec ["AVI_fnc_moneymaker", 0, true];
-
 hint "Pylons Updated";

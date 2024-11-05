@@ -2,13 +2,13 @@
 private ["_lenumb","_num","_golden","_vialace","_Custom_SkDB","_var","_i","_ctrl","_index","_atrapelacoleur","_la_voiture","_lacouleur1","_lacouleur2","_lacouleur3","_lacouleur4","_lestextures","_cnt","_minheight","_tooLow"];disableSerialization;
 _ctrl = _this # 0;
 
-private _minheight = "OFF";
-private _tooLow = format ["<t align='center'><t size='2.2' color='#ed3b00'>ENGINE ON</t><br/><t size='1.2' color='#9ef680'>You need to have the</t><br/><t size='1.5' color='#ed3b00'>Engine %1</t><br/><t size='1.2' color='#9ef680'>in order to use vehicle skin menu.</t></t>",_minheight];
+_minheight = "OFF";
+_tooLow = format ["<t align='center'><t size='2.2' color='#ed3b00'>ENGINE ON</t><br/><t size='1.2' color='#9ef680'>You need to have the</t><br/><t size='1.5' color='#ed3b00'>Engine %1</t><br/><t size='1.2' color='#9ef680'>in order to use vehicle skin menu.</t></t>",_minheight];
 
 _la_voiture = missionNamespace getVariable "theskcpveh";
 
 
-private _Custom_SkDB = missionNamespace getVariable "Custom_SkDB";
+_Custom_SkDB = missionNamespace getVariable "Custom_SkDB";
 if (isNil "_Custom_SkDB") then
 {
 	missionNamespace setVariable ["Custom_SkDB", "Media\vehicleTextures\carbon.paa"]; 
@@ -280,13 +280,13 @@ _golden = [
 
 _lestextures = getObjectTextures (vehicle player);
 _cnt = count _lestextures;
-diag_log format ["_la_voiture %1", _la_voiture];
+
 _num = _vialace findIf {_x isEqualTo (typeof _la_voiture)};
 
-diag_log format ["_num %1", _num];
+
 if !(_num == -1) then {
 	_lenumb =  _golden select _num;
-	diag_log format ["_lenumb%1", _lenumb];
+
 	if !(isEngineOn _la_voiture) then {
 		{
 			_la_voiture setObjectTextureGlobal [_x, _Custom_SkDB];	

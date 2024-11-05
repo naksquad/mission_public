@@ -1,6 +1,6 @@
-_target = _this # 0;
-_pack = unitBackpack _target;
-_class = typeOf _pack;
+private _target = _this # 0;
+private _pack = unitBackpack _target;
+private _class = typeOf _pack;
 
 [_target,_class] spawn {
 private ["_target","_class","_packHolder"];

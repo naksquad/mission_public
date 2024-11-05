@@ -2,13 +2,6 @@
 disableSerialization;
 waitUntil{!isNull (findDisplay V091)};
 
-
-
-
-
-//_0 = ((findDisplay V091) displayCtrl MAMANBUFFER) ctrlEnable true;
-
-
 _0 = ((findDisplay V091) displayCtrl MAMANBUFFER) ctrlSetText "Player Menu";
 _0 = ((findDisplay V091) displayCtrl MAMANBUFFER) buttonSetAction  "createDialog 'nastynak007'";
 _0 = ((findDisplay V091) displayCtrl V093) ctrlEnable false;

@@ -1,4 +1,4 @@
-private ["_parentDisplayDefault","_parentDisplay","_mapCenter","_missions","_ORBAT","_markers","_images","_overcast","_scale","_defaultScale","_simulationEnabled","_displayClass","_display","_playerIcon","_playerColor","_cloudTextures","_cloudsGrid","_cloudsMax","_cloudsSize","_map","_fade","_actionText","_missionIcon","_showIconText"];
+private ["_info","_coef", "_ctrlMissions", "_lbadd","_mapSize","_isNight", "_ctrlBackground", "_parentDisplayDefault","_parentDisplay","_mapCenter","_missions","_ORBAT","_markers","_images","_overcast","_scale","_defaultScale","_simulationEnabled","_displayClass","_display","_playerIcon","_playerColor","_cloudTextures","_cloudsGrid","_cloudsMax","_cloudsSize","_map","_fade","_actionText","_missionIcon","_showIconText"];
 disableserialization;
 
 _parentDisplayDefault = switch false do {
@@ -32,9 +32,9 @@ BIS_fnc_strategicMapOpen_isNight = _isNight;
 
 _scale = 3500 / _mapSize / safezoneH;
 _scale = _scale * (_defaultScale max 0 min 1);
-_maxSatelliteAlpha = if (_isNight) then {0.75} else {1};
+private _maxSatelliteAlpha = if (_isNight) then {0.75} else {1};
 
-_colorOutside = configfile >> "CfgWorlds" >> worldname >> "OutsideTerrain" >> "colorOutside";
+private _colorOutside = configfile >> "CfgWorlds" >> worldname >> "OutsideTerrain" >> "colorOutside";
 _colorOutside = if (isarray _colorOutside) then {
 	_colorOutside call bis_fnc_colorCOnfigToRGBA;
 } else {
@@ -67,7 +67,7 @@ BIS_fnc_strategicMapOpen_player = player;
 
 //--- Process ORBAT
 BIS_fnc_strategicMapOpen_ORBAT = [];
-_onClick = [];
+private _onClick = [];
 {
 	private ["_pos","_class","_parent","_tags","_tiers","_classParams","_text","_texture","_size","_color","_sizeLocal","_sizeParams","_sizeTexture"];
 	_pos = _x param [0,player];
@@ -84,7 +84,7 @@ _onClick = [];
 	_size = _classParams select ("size" call bis_fnc_ORBATGetGroupParams);
 	_color = _classParams select ("color" call bis_fnc_ORBATGetGroupParams);
 
-	_iconSize = sqrt (_size + 1) * 32;
+	private _iconSize = sqrt (_size + 1) * 32;
 
 	//--- Group size
 	//_sizeLocal = _size max 0 min (count (BIS_fnc_ORBATGetGroupParams_sizes) - 1);
@@ -169,6 +169,7 @@ if (count _missions > 0) then {
 	} foreach _missions;
 
 	_ctrlMissions lbsetcursel 0;
+	//_ctrlMissions ctrlRemoveAllEventHandlers "LBSelChanged";
 	_ctrlMissions ctrladdeventhandler [
 		"lbselchanged",
 		"
@@ -483,6 +484,12 @@ _map ctrlmapanimadd [0,_scale,_mapCenter];
 ctrlmapanimcommit _map;
 BIS_fnc_strategicMapOpen_mapCenter = _mapCenter;
 
+// _map ctrlRemoveAllEventHandlers "draw";
+// _map ctrlRemoveAllEventHandlers "mousemoving";
+// _map ctrlRemoveAllEventHandlers "mouseholding";
+// _map ctrlRemoveAllEventHandlers "mousebuttonclick";
+// _display ctrlRemoveAllEventHandlers "keydown";
+
 _map ctrladdeventhandler ["draw","_this call BIS_fnc_strategicMapOpen_draw;"];
 _map ctrladdeventhandler ["mousemoving","_this call BIS_fnc_strategicMapOpen_mouse;"];
 _map ctrladdeventhandler ["mouseholding","_this call BIS_fnc_strategicMapOpen_mouse;"];
@@ -497,20 +504,20 @@ if (_isNight) then {
 //--- Measure
 [_display] spawn {
 	disableserialization;
-	_display = _this # 0;
-	_showMiles = false;
+	private _display = _this # 0;
+	private _showMiles = false;
 
-	_map = _display displayctrl 51;
+	private _map = _display displayctrl 51;
 	waituntil {ctrlmapanimdone _map};
 
-	_xStart = (_map ctrlmapworldtoscreen [0,0,0]) select 0;
-	_xEnd = (_map ctrlmapworldtoscreen [1000,0,0]) select 0;
-	_w1km = abs (_xstart - _xEnd);
-	_w1m = _w1km * 1.60934;
+	private _xStart = (_map ctrlmapworldtoscreen [0,0,0]) select 0;
+	private _xEnd = (_map ctrlmapworldtoscreen [1000,0,0]) select 0;
+	private _w1km = abs (_xstart - _xEnd);
+	private _w1m = _w1km * 1.60934;
 	if !(_showMiles) then {_w1m = 0.01};
-	_h = 0.01;
+	private _h = 0.01;
 
-	_measure = _display displayctrl 2301;
+	private _measure = _display displayctrl 2301;
 	_measure ctrlsetposition [
 		safezoneX + 0.02125,
 		safezoneY + safezoneH - 3.5 * 0.04,
@@ -521,10 +528,10 @@ if (_isNight) then {
 	_measure ctrlcommit 0;
 	_measure ctrlenable false;
 
-	_colors = ["#(argb,8,8,3)color(0,0,0,1)","\A3\Ui_f\data\GUI\Rsc\RscDisplayStrategicMap\measure_ca.paa"];
-	_kmSegment = _w1km / 5;
+	private _colors = ["#(argb,8,8,3)color(0,0,0,1)","\A3\Ui_f\data\GUI\Rsc\RscDisplayStrategicMap\measure_ca.paa"];
+	private _kmSegment = _w1km / 5;
 	for "_i" from 0 to 4 do {
-		_km = _display displayctrl (1200 + _i);
+		private _km = _display displayctrl (1200 + _i);
 		_km ctrlsettext (_colors select (_i % 2));
 		_km ctrlsetposition [
 			_w1m + _kmSegment * _i,
@@ -535,7 +542,7 @@ if (_isNight) then {
 		_km ctrlcommit 0;
 	};
 
-	_text_0 = _display displayctrl 1002;
+	private _text_0 = _display displayctrl 1002;
 	_text_0 ctrlsetposition [
 		_w1m - _w1km,
 		_h * 3,
@@ -543,7 +550,7 @@ if (_isNight) then {
 		_h * 2
 	];
 	_text_0 ctrlcommit 0;
-	_text_km = _display displayctrl 1004;
+	private _text_km = _display displayctrl 1004;
 	_text_km ctrlsetposition [
 		_w1m - _w1km + (safezoneH / 30),
 		_h * 3,
@@ -553,7 +560,7 @@ if (_isNight) then {
 	_text_km ctrlcommit 0;
 
 	if (_showMiles) then {
-		_m0 = _display displayctrl 1205;
+		private _m0 = _display displayctrl 1205;
 		_m0 ctrlsettext "#(argb,8,8,3)color(1,1,1,1)";
 		_m0 ctrlsetposition [
 			0,
@@ -562,7 +569,7 @@ if (_isNight) then {
 			_h
 		];
 		_m0 ctrlcommit 0;
-		_text_m = _display displayctrl 1003;
+		private _text_m = _display displayctrl 1003;
 		_text_m ctrlsetposition [
 			0,
 			_h * 3,
